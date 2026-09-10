@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  INPOINTS — Design tokens                                          */
+/*  Le jumeau bleuté du site InSports : même architecture, même typo,  */
+/*  même rythme — mais un sol bleu nuit et un accent cyan, parce que   */
+/*  ce n'est pas le même produit. Le rouge et le bleu du tapis, eux,   */
+/*  gardent leurs valeurs propres : ils désignent un côté, jamais un   */
+/*  goût (voir --color-corner-* et --color-screen-*).                  */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Ground & surfaces — bleu nuit */
+  --color-bg: #0a1120; /* fond de page */
+  --color-bg-subtle: #0c1526; /* bande de section alternée */
+  --color-surface: #111c31; /* fond de carte */
+  --color-surface-2: #17253e; /* carte survolée / surélevée */
+  --color-line: #223252; /* filets */
+  --color-line-strong: #2e4269;
+
+  /* Ink */
+  --color-fg: #eef4fc; /* texte principal */
+  --color-muted: #9bacc6; /* texte secondaire */
+  --color-faint: #8a9cb8; /* légendes — remonté pour tenir 4.5:1 sur les cartes */
+
+  /* Accent cyan — le bleu du produit, et non le corail d'InSports.
+     Deux valeurs, car un seul cyan ne peut pas servir aux deux usages :
+     --color-primary porte du texte BLANC en aplat (bouton), donc il est
+     sombre ; --color-primary-soft est du TEXTE sur fond sombre, donc il est
+     clair. Les inverser rendrait l'un des deux illisible. */
+  --color-primary: #0b7aab;
+  --color-primary-strong: #09648a;
+  --color-primary-soft: #4fd1e8;
+
+  /* Accents de données (mockups, avec parcimonie) */
+  --color-info: #6aa9ff;
+  --color-success: #3fae7f;
+  --color-warn: #e0a83f;
+
+  /* Les couleurs du tapis. Elles viennent de l'application et ne se
+     choisissent pas dans une charte : en compétition, un athlète est rouge et
+     l'autre bleu. */
+  --color-corner-red: #d0433c;
+  --color-corner-blue: #5b8fe0;
+
+  /* L'écran géant. Fond BLANC, fixe : il est projeté dans un gymnase et vu de
+     vingt mètres. C'est le seul endroit clair du site, et c'est voulu. */
+  --color-screen-bg: #ffffff;
+  --color-screen-ink: #000000;
+  --color-screen-muted: #5a5a5a;
+  --color-screen-line: #d4d4d4;
+  --color-screen-red: #c81e14;
+  --color-screen-blue: #1b4fa8;
+
+  /* Semantic */
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-fg);
+
+  /* Type */
+  --font-sans: var(--ff-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--ff-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--ff-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Layout */
+  --spacing-gutter: 1.5rem;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                              */
+/* ------------------------------------------------------------------ */
+@layer base {
+  * {
+    border-color: var(--color-line);
+    min-width: 0;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv01", "cv03", "ss01";
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary-soft);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  ::-webkit-scrollbar { width: 11px; height: 11px; }
+  ::-webkit-scrollbar-track { background: var(--color-bg); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line-strong);
+    border-radius: 99px;
+    border: 3px solid var(--color-bg);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #3b5382; }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Utilities                                                         */
+/* ------------------------------------------------------------------ */
+@layer utilities {
+  /* Fluid display type */
+  .text-display {
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.0;
+    font-size: clamp(2.5rem, 6.2vw, 5.75rem);
+  }
+  .text-h2 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: clamp(1.9rem, 4vw, 3.25rem);
+    line-height: 1.05;
+  }
+  .text-h3 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+  }
+  .text-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-primary-soft);
+  }
+  .text-lead {
+    font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+    line-height: 1.6;
+    color: var(--color-muted);
+  }
+
+  /* Accent gradient text */
+  .text-gradient {
+    background: linear-gradient(100deg, #fff 0%, var(--color-primary-soft) 120%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Le halo de marque, derrière le hero et le CTA */
+  .brand-glow {
+    background: radial-gradient(
+      circle at center,
+      rgba(79, 209, 232, 0.20) 0%,
+      rgba(11, 122, 171, 0.08) 35%,
+      transparent 70%
+    );
+  }
+
+  /* Fine grid / dotted backdrop */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(160, 200, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(160, 200, 255, 0.045) 1px, transparent 1px);
+    background-size: 46px 46px;
+  }
+
+  .surface {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+  }
+
+  .edge-light {
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .shadow-card {
+    box-shadow:
+      0 1px 2px rgba(2, 8, 20, 0.5),
+      0 12px 40px -12px rgba(2, 8, 20, 0.65);
+  }
+
+  .grain {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 180px 180px;
+  }
+
+  .vignette {
+    background: radial-gradient(
+      ellipse 80% 70% at 50% 40%,
+      transparent 55%,
+      rgba(2, 8, 20, 0.5) 100%
+    );
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Reduced motion                                                    */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
