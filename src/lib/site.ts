@@ -4,7 +4,8 @@
 
 export const siteConfig = {
   name: "Inpoints",
-  legalName: "Inpoints",
+  /** L'éditeur, tel qu'il figure dans les mentions légales : une personne, pas une société. */
+  legalName: "Théo Bauweleers — Syne Studio",
   tagline: "La plateforme de compétition, d'arbitrage et de résultats",
   description:
     "Inpoints gère la compétition de bout en bout : inscriptions, tirages et tableaux, terrains et planning, accueil et pesée, arbitrage électronique, direct, écran géant et résultats officiels. Application sœur d'InSports.",
@@ -14,6 +15,8 @@ export const siteConfig = {
   /** Le site vitrine de l'application sœur — lien croisé dans le pied de page. */
   siblingName: "InSports",
   siblingUrl: "https://insport-landing.vercel.app",
+  /** L'application elle-même : les documents juridiques y sont publiés sous /legal. */
+  appUrl: process.env.NEXT_PUBLIC_APP_URL ?? "https://app.inpoints.be",
 } as const;
 
 export type NavItem = { label: string; href: string };

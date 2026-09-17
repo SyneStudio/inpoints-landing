@@ -339,7 +339,7 @@ export const nl: Dict = {
       platform: { title: "Platform", links: ["Functionaliteiten", "Applicatie", "Beveiliging", "Tarieven"] },
       resources: { title: "Hulpmiddelen", links: ["Documentatie", "Ondersteuning", "FAQ"] },
       company: { title: "Onderneming", links: ["Over ons", "Contact"] },
-      legal: { title: "Juridisch", links: ["Privacy", "Wettelijke vermeldingen", "Voorwaarden"] },
+      legal: { title: "Juridisch", links: ["Privacy", "Wettelijke vermeldingen", "Voorwaarden", "Cookies"] },
     },
     rights: "Alle rechten voorbehouden.",
     madeFor: "Ontworpen voor wedstrijdorganisatoren.",

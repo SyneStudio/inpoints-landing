@@ -10,7 +10,14 @@ const hrefs = {
   platform: ["#fonctionnalites", "#application", "#securite", "#tarifs"],
   resources: ["#", "#contact", "#"],
   company: ["#", "#contact"],
-  legal: ["#", "#", "#"],
+  // Les documents juridiques vivent dans l'application, lisibles sans compte :
+  // une seule source, et la vitrine n'en garde pas une copie qui vieillirait.
+  legal: [
+    siteConfig.appUrl + "/legal/confidentialite",
+    siteConfig.appUrl + "/legal/mentions-legales",
+    siteConfig.appUrl + "/legal/cgu",
+    siteConfig.appUrl + "/legal/cookies",
+  ],
 } as const;
 
 export function Footer() {

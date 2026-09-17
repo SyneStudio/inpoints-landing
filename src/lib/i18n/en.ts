@@ -339,7 +339,7 @@ export const en: Dict = {
       platform: { title: "Platform", links: ["Features", "Application", "Security", "Pricing"] },
       resources: { title: "Resources", links: ["Documentation", "Support", "FAQ"] },
       company: { title: "Company", links: ["About", "Contact"] },
-      legal: { title: "Legal", links: ["Privacy", "Legal notice", "Terms"] },
+      legal: { title: "Legal", links: ["Privacy", "Legal notice", "Terms", "Cookies"] },
     },
     rights: "All rights reserved.",
     madeFor: "Built for competition organisers.",

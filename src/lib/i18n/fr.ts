@@ -337,7 +337,7 @@ export const fr = {
       platform: { title: "Plateforme", links: ["Fonctionnalités", "Application", "Sécurité", "Tarifs"] },
       resources: { title: "Ressources", links: ["Documentation", "Support", "FAQ"] },
       company: { title: "Entreprise", links: ["À propos", "Contact"] },
-      legal: { title: "Légal", links: ["Confidentialité", "Mentions légales", "CGU"] },
+      legal: { title: "Légal", links: ["Confidentialité", "Mentions légales", "CGU", "Cookies"] },
     },
     rights: "Tous droits réservés.",
     madeFor: "Conçu pour les organisateurs de compétitions.",
