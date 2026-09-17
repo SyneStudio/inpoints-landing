@@ -12,7 +12,6 @@ import {
   MapPin,
   CalendarClock,
   UsersRound,
-  Gavel,
   Scale,
   Swords,
   Sparkles,

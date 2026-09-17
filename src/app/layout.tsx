@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "logiciel gestion compétition sportive",
-    "logiciel tirage au sort tableaux",
+    "logiciel compétition sports de combat",
+    "logiciel bracket tournoi",
     "arbitrage électronique",
     "scoring compétition",
     "résultats sportifs en direct",
     "écran géant compétition",
     "gestion des inscriptions compétition",
-    "logiciel tournoi",
   ],
   authors: [{ name: siteConfig.name }],
   applicationName: siteConfig.name,
@@ -66,7 +66,6 @@ export default function RootLayout({
       <body>
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <I18nProvider>{children}</I18nProvider>

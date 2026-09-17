@@ -1,39 +1,32 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { Hero } from "@/components/sections/Hero";
-import { Problem } from "@/components/sections/Problem";
-import { Solution } from "@/components/sections/Solution";
-import { Centralization } from "@/components/sections/Centralization";
-import { DashboardShowcase } from "@/components/sections/DashboardShowcase";
-import { Scoreboard } from "@/components/sections/Scoreboard";
-import { Sports } from "@/components/sections/Sports";
+import { CombatSports } from "@/components/sections/CombatSports";
+import { Tools } from "@/components/sections/Tools";
+import { DeepDives } from "@/components/sections/DeepDives";
+import { AppShowcase } from "@/components/sections/AppShowcase";
 import { TimeSaving } from "@/components/sections/TimeSaving";
-import { Personas } from "@/components/sections/Personas";
-import { AppScreens } from "@/components/sections/AppScreens";
-import { Security } from "@/components/sections/Security";
-import { Adaptability } from "@/components/sections/Adaptability";
-import { Pricing } from "@/components/sections/Pricing";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { Quote } from "@/components/sections/Quote";
 
+/**
+ * La page, dans l'ordre où un organisateur la lit : ce qu'est Inpoints, pour
+ * quels sports, avec quels outils, les quatre qui comptent, l'application
+ * entière, ce qu'on y gagne, et comment demander un devis.
+ */
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />
-        <Problem />
-        <Solution />
-        <Centralization />
-        <DashboardShowcase />
-        <Scoreboard />
-        <Sports />
+        <CombatSports />
+        <Tools />
+        <DeepDives />
+        <AppShowcase />
         <TimeSaving />
-        <Personas />
-        <AppScreens />
-        <Security />
-        <Adaptability />
-        <Pricing />
-        <FinalCTA />
+        <Quote />
       </main>
       <Footer />
     </>

@@ -31,19 +31,24 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
 
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY) as Locale | null;
-      if (saved && locales.includes(saved)) {
-        setLocaleState(saved);
-        return;
+    // Différé d'un tour : la langue mémorisée s'applique juste après le
+    // montage, sans déclencher un rendu en cascade dans l'effet lui-même.
+    const id = window.setTimeout(() => {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY) as Locale | null;
+        if (saved && locales.includes(saved)) {
+          setLocaleState(saved);
+          return;
+        }
+        const nav = navigator.language?.slice(0, 2).toLowerCase() as Locale;
+        if (nav && locales.includes(nav) && dictionaries[nav]) {
+          setLocaleState(nav);
+        }
+      } catch {
+        /* localStorage / navigator unavailable — keep default */
       }
-      const nav = navigator.language?.slice(0, 2).toLowerCase() as Locale;
-      if (nav && locales.includes(nav) && dictionaries[nav]) {
-        setLocaleState(nav);
-      }
-    } catch {
-      /* localStorage / navigator unavailable — keep default */
-    }
+    }, 0);
+    return () => window.clearTimeout(id);
   }, []);
 
   useEffect(() => {

@@ -1,20 +1,35 @@
 # Inpoints — site vitrine
 
-Site vitrine d'**Inpoints**, la plateforme de gestion de compétition :
-inscriptions, tirages et tableaux, terrains et planning, accueil et pesée,
-arbitrage électronique, direct, écran géant et résultats officiels.
+Site vitrine d'**Inpoints**, le logiciel qui accompagne une compétition de
+sports de combat de l'inscription aux résultats : participants, brackets,
+arbitrage électronique, direct, écran géant et classements.
 
-C'est le **jumeau** du site d'InSports (`SyneStudio/insport-landing`) : même
-architecture, même typographie, même rythme de sections — mais un sol bleu
-nuit, un accent cyan, et le discours de la compétition plutôt que celui de la
-gestion fédérale.
+Né **jumeau** du site d'InSports (`SyneStudio/insport-landing`) — même
+typographie, mêmes primitives, un sol bleu nuit et un accent cyan — il a
+depuis sa propre architecture, en huit temps :
+
+1. **Hero** — le message, et la console du jour entourée de quatre cartes
+   flottantes (tableau, score, inscription, résultats).
+2. **Pour tous les sports de combat** — un arc de cartes ; la discipline
+   choisie est au sommet, flèches, clavier, glisser, avance automatique
+   jusqu'au premier geste.
+3. **Les outils** — neuf cartes, chacune avec une micro-maquette qui bouge
+   au survol.
+4. **Les fonctionnalités essentielles** — bracket, inscriptions, arbitrage,
+   direct : quatre grands blocs alternés, avec parallaxe légère.
+5. **L'application** — sept écrans posés en perspective, ailes qui s'ouvrent
+   au défilement ; piste horizontale sous 1024 px. Quatre garanties dessous.
+6. **Gain de temps** — un registre « organisation classique → avec Inpoints »,
+   moment par moment, puis quatre effets.
+7. **Devis** — le bloc « sur devis » et le formulaire (table partagée, voir
+   plus bas).
+8. **Pied de page** — contact, navigation, documents juridiques.
 
 ## Stack
 
 - **Next.js 16** (App Router) + **React 19** + **TypeScript**
 - **Tailwind CSS v4** (jetons de design dans `src/app/globals.css`)
 - **Framer Motion** (reveals, micro-interactions)
-- **Three.js** + **React Three Fiber** (scène de hero, optionnelle)
 - **Supabase** (demandes de démonstration)
 - **Lucide** (icônes)
 
@@ -73,12 +88,13 @@ src/
   app/            # routes, layout, globals, api/demo, robots, sitemap
   components/
     layout/       # Navbar, Footer, LanguageSwitcher
-    sections/     # Hero, Problem, Solution, …, Scoreboard, …, FinalCTA
-    mockups/      # Console, Bracket, Planning, Scoring, Scoreboard, Results
-    three/        # HeroScene (WebGL) + HeroBackground (fond CSS)
+    sections/     # Hero, CombatSports, Tools, DeepDives, AppShowcase,
+                  # TimeSaving, Quote (+ HeroBackground)
+    mockups/      # Console, Participants, Bracket, Planning, Scoring,
+                  # Scoreboard, Results, Registration, Live (+ PhoneFrame)
     demo/         # DemoForm
     ui/           # primitives (Button, Container, Reveal, …)
-  data/           # features, benefits, screens, sports
+  data/           # combatSports, tools
   hooks/          # useMediaQuery, usePrefersReducedMotion
   lib/            # fonts, site, utils, validation, supabase, i18n
 ```

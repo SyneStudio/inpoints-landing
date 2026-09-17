@@ -1,12 +1,6 @@
 "use client";
 
 import { Search, Plus, Download, Upload, ChevronDown } from "lucide-react";
-import type { ScreenId } from "@/data/screens";
-import { ConsoleMockup } from "./ConsoleMockup";
-import { BracketMockup } from "./BracketMockup";
-import { PlanningMockup } from "./PlanningMockup";
-import { ScoringMockup } from "./ScoringMockup";
-import { ResultsMockup } from "./ResultsMockup";
 import { useT } from "@/lib/i18n/provider";
 import { cn } from "@/lib/utils";
 
@@ -36,19 +30,12 @@ const toneClass: Record<Tone, string> = {
 const S = (tone: Tone, key: StatusKey): Badge => ({ tone, key });
 
 /**
- * Un écran de l'application, rendu comme maquette. Cinq des six écrans ont
- * leur propre composant — un tableau, un planning et une console d'arbitrage
- * ne se réduisent pas à une liste. Reste ici la liste des engagés, qui, elle,
- * en est bien une.
+ * La liste des engagés — club, catégorie, état de l'accueil et de la pesée.
+ * C'est le seul écran de l'application qui soit vraiment une liste ; les
+ * autres (tableau, planning, console d'arbitrage) ont leur propre maquette.
  */
-export function ScreenMockup({ id }: { id: ScreenId }) {
+export function ParticipantsMockup({ className }: { className?: string }) {
   const t = useT();
-
-  if (id === "dashboard") return <ConsoleMockup className="h-full" />;
-  if (id === "draws") return <BracketMockup className="h-full" />;
-  if (id === "planning") return <PlanningMockup className="h-full" />;
-  if (id === "scoring") return <ScoringMockup className="h-full" />;
-  if (id === "results") return <ResultsMockup className="h-full" />;
 
   const m = t.mock.participants;
   const cols = [
@@ -72,7 +59,10 @@ export function ScreenMockup({ id }: { id: ScreenId }) {
 
   return (
     <div
-      className="flex h-full w-full flex-col overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-line)] bg-[var(--color-bg)] text-[11px] text-[var(--color-fg)]"
+      className={cn(
+        "flex h-full w-full flex-col overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-line)] bg-[var(--color-bg)] text-[11px] text-[var(--color-fg)]",
+        className,
+      )}
       aria-hidden
     >
       <div className="flex items-center justify-between px-4 pt-3">

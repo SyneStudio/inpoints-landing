@@ -10,11 +10,11 @@ import { useT } from "@/lib/i18n/provider";
 import { cn } from "@/lib/utils";
 
 const NAV = [
+  { key: "sports", href: "#sports" },
+  { key: "tools", href: "#outils" },
   { key: "features", href: "#fonctionnalites" },
-  { key: "federations", href: "#federations" },
   { key: "application", href: "#application" },
-  { key: "security", href: "#securite" },
-  { key: "pricing", href: "#tarifs" },
+  { key: "quote", href: "#devis" },
 ] as const;
 
 export function Navbar() {
@@ -105,7 +105,7 @@ export function Navbar() {
             <Button href="#contact" variant="ghost" size="md">
               {t.nav.contact}
             </Button>
-            <Button href="#demo" variant="primary" size="md">
+            <Button href="#devis" variant="primary" size="md">
               {t.nav.demo}
             </Button>
           </div>
@@ -146,7 +146,7 @@ export function Navbar() {
               </li>
             ))}
             <li className="mt-3 flex flex-col gap-2">
-              <Button href="#demo" variant="primary" size="lg" onClick={() => setOpen(false)}>
+              <Button href="#devis" variant="primary" size="lg" onClick={() => setOpen(false)}>
                 {t.nav.demo}
               </Button>
               <Button href="#contact" variant="secondary" size="lg" onClick={() => setOpen(false)}>

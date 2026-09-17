@@ -1,315 +1,227 @@
 /** French dictionary — canonical source of truth for the Dict type. */
 export const fr = {
   nav: {
+    sports: "Sports",
+    tools: "Outils",
     features: "Fonctionnalités",
-    federations: "Pour qui",
     application: "Application",
-    security: "Sécurité",
-    pricing: "Tarifs",
+    quote: "Devis",
     contact: "Nous contacter",
-    demo: "Demander une démo",
+    demo: "Demander un devis",
   },
   hero: {
-    titleA: "La plateforme qui fait tourner vos ",
-    titleHl: "compétitions, du tirage au podium.",
-    ctaPrimary: "Demander une démonstration",
-    ctaSecondary: "Découvrir la plateforme",
-  },
-  problem: {
-    kicker: "Le constat",
-    titleA: "Un jour de compétition ne devrait pas se jouer sur des ",
-    titleHl: "feuilles de papier.",
-    lead: "Le tableau est redessiné à la main, les scores se ressaisissent le soir, et tout le monde attend les résultats du lendemain.",
-    pains: [
-      "Tableaux redessinés à la main",
-      "Feuilles de score ressaisies le soir",
-      "Classements recalculés sous Excel",
-      "Horaires affichés sur un mur",
-      "Athlètes qui cherchent leur aire",
-      "Résultats publiés le lendemain",
-      "Réclamations traitées de mémoire",
-      "Pesée notée sur une liste papier",
+    title: "Le logiciel qui vous accompagne à chaque compétition",
+    lead: "De l'inscription aux résultats, en passant par les tableaux et l'arbitrage : Inpoints tient toute la journée de compétition sur une seule plateforme.",
+    ctaPrimary: "Demander un devis",
+    ctaSecondary: "Découvrir le logiciel",
+    keywords: [
+      "Inscriptions",
+      "Participants",
+      "Brackets",
+      "Arbitrage",
+      "Résultats",
+      "Direct",
+      "Gestion de compétition",
     ],
-    before: ["Papier", "Tableur", "Groupes de discussion", "Mémoire"],
-    afterKicker: "Après",
-    afterTitle: "Une seule compétition, en direct.",
-    afterText:
-      "Le tableau, les scores, les horaires et les résultats vivent au même endroit — et se mettent à jour au geste de l'arbitre.",
-  },
-  solution: {
-    kicker: "La solution",
-    titleA: "Toute la compétition. ",
-    titleHl: "Un seul outil.",
-    lead: "Huit modules qui suivent le déroulé réel d'une journée — ce qu'on prépare, ce qui se passe sur l'aire, ce qu'on publie.",
-    features: [
-      {
-        title: "Inscriptions",
-        description:
-          "Un formulaire par compétition, les demandes des clubs, la validation, et la liste des engagés toujours à jour.",
-      },
-      {
-        title: "Tirages et tableaux",
-        description:
-          "Tirage équilibré, têtes de série, poules ou élimination directe. Le tableau se lit depuis les rencontres : juste le matin, et encore juste à midi.",
-      },
-      {
-        title: "Terrains et planning",
-        description:
-          "Les aires, l'ordre de passage et les horaires estimés. Un retard se répercute sur la journée entière, pas sur une feuille à réimprimer.",
-      },
-      {
-        title: "Accueil et pesée",
-        description:
-          "L'arrivée, le contrôle de licence et la pesée en un seul passage. Ce qui est constaté au guichet entre directement dans le tableau.",
-      },
-      {
-        title: "Arbitrage électronique",
-        description:
-          "Le geste de l'arbitre compte le point. Journal en ajout seul, corrections motivées, et le score s'affiche partout à la seconde.",
-      },
-      {
-        title: "Direct et écran géant",
-        description:
-          "La salle, le public et les familles suivent la même journée : écran du gymnase, page publique sans compte, tableau qui bouge.",
-      },
-      {
-        title: "Résultats et palmarès",
-        description:
-          "Classements, médailles par club et palmarès d'athlète, produits par le calcul et non par une saisie du soir.",
-      },
-      {
-        title: "Réclamations",
-        description:
-          "Une contestation s'ouvre, se motive et se tranche dans l'outil. La décision reste attachée à la rencontre qu'elle concerne.",
-      },
-    ],
-  },
-  centralization: {
-    kicker: "Une seule vérité",
-    title: "Tout part de la rencontre, et tout y revient",
-    sources: ["Inscriptions", "Tirages", "Terrains", "Arbitrage", "Officiels", "Réclamations"],
-    platform: "Plateforme Inpoints",
-  },
-  dashboard: {
-    kicker: "Le jour J",
-    title: "La journée entière sur un écran",
-    lead: "Ce qui se passe sur chaque aire, ce qui arrive dans dix minutes, et ce qui bloque — sans quitter la console.",
-    callouts: [
-      {
-        title: "Ce qui tourne maintenant",
-        text: "Les rencontres en cours, aire par aire, avec leur score et leur round.",
-      },
-      {
-        title: "Ce qui vient ensuite",
-        text: "L'ordre de passage et les horaires estimés, recalculés au fil des retards.",
-      },
-      {
-        title: "Le journal",
-        text: "Chaque geste enregistré, horodaté, jamais effacé : on sait toujours d'où vient un point.",
-      },
-      {
-        title: "Ce qui bloque",
-        text: "Pesée manquante, réclamation ouverte, officiel absent : l'alerte mène à l'écran qui la règle.",
-      },
-    ],
-  },
-  scoreboard: {
-    kicker: "Dans la salle",
-    titleA: "L'écran du gymnase, ",
-    titleHl: "lisible du fond de la salle.",
-    lead: "Un fond blanc, deux scores, un round. Il ne suit aucun thème et aucune préférence : il est projeté sur un mur et vu de vingt mètres, par des gens qui n'ont rien configuré.",
-    points: [
-      {
-        title: "Une adresse, aucun compte",
-        text: "L'écran s'ouvre avec un lien. Pas d'installation, pas de session à tenir toute la journée.",
-      },
-      {
-        title: "Le score de l'arbitre",
-        text: "Ce qui s'affiche est ce qui a été compté sur l'aire, à la seconde, sans intermédiaire.",
-      },
-      {
-        title: "Le public suit aussi",
-        text: "La même journée existe en page publique : les familles lisent le tableau depuis leur téléphone.",
-      },
-    ],
-  },
-  appScreens: {
-    kicker: "L'application",
-    titleA: "La compétition, ",
-    titleHl: "écran par écran",
-    lead: "Six écrans parmi la vingtaine que traverse un organisateur, de l'inscription au palmarès.",
-    tabs: {
-      dashboard: "Console du jour",
-      participants: "Participants",
-      draws: "Tirages et tableaux",
-      planning: "Planning des aires",
-      scoring: "Arbitrage",
-      results: "Résultats",
-    },
-    detail: {
-      dashboard: {
-        title: "Le poste de commande",
-        description:
-          "Engagés, rencontres, aires occupées et alertes : l'état de la journée dès l'ouverture, et chaque chiffre mène à l'écran qui le règle.",
-      },
-      participants: {
-        title: "Les engagés, à jour",
-        description:
-          "La liste complète des participants — club, catégorie, état de l'accueil et de la pesée — avec recherche, filtres et export.",
-      },
-      draws: {
-        title: "Un tableau qui ne ment pas",
-        description:
-          "Le tirage pose le tableau, les rencontres le font vivre. Score, vainqueur, aire et état s'y lisent en permanence, sans rien recalculer.",
-      },
-      planning: {
-        title: "L'ordre de passage",
-        description:
-          "Les aires en colonnes, les heures en lignes. Un retard se propage, et l'athlète voit son horaire bouger sur son téléphone.",
-      },
-      scoring: {
-        title: "Le geste compte le point",
-        description:
-          "Console d'arbitrage : chaque action est enregistrée, horodatée et attribuée. Une correction s'ajoute au journal, elle n'efface rien.",
-      },
-      results: {
-        title: "Le palmarès, sans ressaisie",
-        description:
-          "Classements, tableau des médailles par club et feuilles officielles — calculés depuis les rencontres, exportables immédiatement.",
-      },
+    cards: {
+      bracket: { title: "Demi-finale", sub: "Senior · A — Aire 2" },
+      score: { round: "Round 2", live: "En direct" },
+      registration: { title: "Inscription validée", sub: "L. Petit — Junior · B" },
+      results: { title: "Résultats publiés", sub: "Senior · C — 09:58" },
     },
   },
   sports: {
-    kicker: "Universelle",
-    title: "Une plateforme pensée pour toutes les disciplines",
-    lead: "Poules, élimination directe, rencontres ou prestations notées : le règlement se décrit, il ne se code pas.",
-    footnote: "Sports de combat, sports notés, sports individuels — le même outil, réglé par votre règlement.",
+    kicker: "Pour tous les sports de combat",
+    title: "Un seul logiciel, toutes les disciplines",
+    lead: "Poules, tableaux, rounds, barèmes : le règlement se décrit dans Inpoints, il ne se code pas. La même plateforme s'adapte à chaque discipline.",
+    prev: "Sport précédent",
+    next: "Sport suivant",
+    selected: "Sport sélectionné",
+    common: "Inscriptions, tableaux, arbitrage électronique et direct — réglés par votre règlement.",
+    footnote: "Une discipline absente de la liste ? Elle se décrit dans un règlement, sans repartir de zéro.",
     names: {
-      Football: "Football",
-      Basketball: "Basketball",
-      Tennis: "Tennis",
-      Athletics: "Athlétisme",
-      Swimming: "Natation",
-      Judo: "Judo",
-      Karate: "Karaté",
-      Cycling: "Cyclisme",
-      Gymnastics: "Gymnastique",
-      Volleyball: "Volleyball",
-      Handball: "Handball",
-      Rugby: "Rugby",
-      Climbing: "Escalade",
-      Fencing: "Escrime",
-      Rowing: "Aviron",
-      Boxing: "Boxe",
+      wushu: "Wushu",
+      kungfu: "Kung-Fu",
+      karate: "Karaté",
+      taekwondo: "Taekwondo",
+      judo: "Judo",
+      boxing: "Boxe",
+      kickboxing: "Kickboxing",
+      mma: "MMA",
+      jiujitsu: "Jiu-Jitsu",
+      sanda: "Sanda",
     },
+  },
+  tools: {
+    kicker: "Les outils",
+    more: "Voir en détail",
+    titleA: "Toute la compétition, ",
+    titleHl: "outil par outil",
+    lead: "Chaque moment de la journée a son écran. Ils partagent la même base : ce qui est saisi à l'accueil se lit dans le tableau, et ce qui est compté sur l'aire s'affiche sur l'écran géant.",
+    items: {
+      competitions: {
+        title: "Gestion des compétitions",
+        description: "Une compétition, ses catégories, ses aires et son règlement : le cadre de la journée, posé une fois.",
+      },
+      registrations: {
+        title: "Inscriptions",
+        description: "Un formulaire public par compétition, les demandes des clubs, la validation en un geste.",
+      },
+      participants: {
+        title: "Participants",
+        description: "La liste des engagés — club, catégorie, accueil, pesée — avec recherche, filtres et export.",
+      },
+      brackets: {
+        title: "Brackets",
+        description: "Tirage équilibré, têtes de série, poules ou élimination directe. Le tableau suit les rencontres.",
+      },
+      scoring: {
+        title: "Arbitrage",
+        description: "Le geste du juge compte le point. Journal horodaté, corrections motivées, hors-ligne compris.",
+      },
+      live: {
+        title: "Direct",
+        description: "Écran géant, page publique et tableau qui bouge : la salle et les familles suivent la même journée.",
+      },
+      results: {
+        title: "Résultats et classements",
+        description: "Classements, médailles par club et palmarès, calculés depuis les rencontres et exportables.",
+      },
+      planning: {
+        title: "Aires et planning",
+        description: "Les aires en colonnes, les heures en lignes. Un retard se propage, rien ne se réimprime.",
+      },
+      desk: {
+        title: "Accueil et pesée",
+        description: "L'arrivée, le contrôle de licence et la pesée en un seul passage, directement dans le tableau.",
+      },
+    },
+  },
+  deep: {
+    kicker: "Les fonctionnalités essentielles",
+    titleA: "Quatre outils qui font ",
+    titleHl: "la journée",
+    lead: "Le tableau, les inscriptions, l'arbitrage et le direct : ce sur quoi tout repose, et ce qu'Inpoints pousse le plus loin.",
+    bracket: {
+      kicker: "Bracket",
+      title: "Un tableau qui se lit depuis les rencontres",
+      text: "Le tirage pose le tableau ; les rencontres le font vivre. Chaque score, chaque vainqueur et chaque aire s'y inscrivent au fil de la journée, sans rien recalculer.",
+      points: [
+        "Création : tirage équilibré, têtes de série, poules ou élimination directe",
+        "Suivi : le vainqueur passe au tour suivant à la seconde où le combat se termine",
+        "Progression : chaque participant voit son parcours et sa prochaine rencontre",
+      ],
+    },
+    registration: {
+      kicker: "Inscriptions",
+      title: "De la demande du club à la liste des engagés",
+      text: "Un formulaire public par compétition, construit sur vos catégories. Les demandes arrivent dans une boîte de réception, se valident en un geste, et l'athlète entre directement dans le tableau.",
+      points: [
+        "Formulaire public, sans compte pour le club",
+        "Validation, refus ou demande de correction depuis la même liste",
+        "Les engagés validés alimentent le tirage et l'accueil",
+      ],
+    },
+    scoring: {
+      kicker: "Arbitrage",
+      title: "Une console faite pour le bord de l'aire",
+      text: "Deux coins, un chrono, un round. Le geste du juge compte le point et s'inscrit dans un journal qui n'efface jamais : une correction s'ajoute, elle ne remplace pas.",
+      points: [
+        "Le combat en cours, les participants et le score en un coup d'œil",
+        "Avertissements, fin de round et décisions au même endroit",
+        "Continue de fonctionner si le réseau tombe, et synchronise à la reconnexion",
+      ],
+    },
+    live: {
+      kicker: "Direct",
+      title: "La même journée, pour tout le monde",
+      text: "Ce qui est compté sur l'aire s'affiche à la seconde sur l'écran du gymnase et sur la page publique. Spectateurs, organisateurs et participants regardent la même chose.",
+      points: [
+        "Écran géant ouvert avec un lien, sans compte ni installation",
+        "Page publique : horaires, aires, tableau et résultats depuis un téléphone",
+        "L'athlète voit son horaire bouger quand la journée prend du retard",
+      ],
+    },
+  },
+  app: {
+    kicker: "L'application",
+    titleA: "Un écosystème, ",
+    titleHl: "pas une succession d'écrans",
+    lead: "Console du jour, participants, tableaux, planning, arbitrage et résultats : une vingtaine d'écrans, groupés par moment de la journée, et une seule base derrière.",
+    screens: {
+      console: "Console du jour",
+      participants: "Participants",
+      draws: "Tableaux",
+      planning: "Planning des aires",
+      scoring: "Arbitrage",
+      results: "Résultats",
+      scoreboard: "Écran géant",
+    },
+    trust: [
+      { title: "Rôles distincts", text: "Organisateur, chef arbitre, juge, athlète : des portes différentes, tenues dans la base." },
+      { title: "Journal en ajout seul", text: "Rien n'est effacé. Annuler un geste ajoute une correction motivée." },
+      { title: "Arbitrage hors-ligne", text: "Un geste saisi sans réseau est conservé et part à la reconnexion." },
+      { title: "Hébergement européen", text: "Infrastructure gérée, sauvegardes régulières, mises à jour suivies." },
+    ],
   },
   timeSaving: {
     kicker: "Gain de temps",
     titleA: "Moins de papier. ",
     titleHl: "Plus de sport.",
-    lead: "Ce que la plateforme calcule, personne ne le ressaisit — et la soirée de dépouillement disparaît.",
-    benefits: [
-      { title: "Un tableau toujours juste", description: "Il se lit depuis les rencontres, donc il ne vieillit pas." },
-      { title: "Le tirage en un geste", description: "Équilibré, reproductible, et refait en une seconde si une absence tombe." },
-      { title: "Aucune ressaisie", description: "La feuille de score n'existe plus en double : elle est le journal." },
-      { title: "Résultats immédiats", description: "Publiés à la fin de la rencontre, pas le lendemain matin." },
-      { title: "Moins d'erreurs", description: "Le classement est calculé, pas recopié d'une colonne à l'autre." },
-      { title: "La journée visible", description: "Aires, retards, rencontres en cours : tout le monde regarde la même chose." },
-      { title: "Tout retrouvé", description: "Un athlète, une rencontre, une décision : la recherche y mène." },
+    lead: "Ce que la plateforme calcule, personne ne le ressaisit. Voici, moment par moment, ce qui change dans une journée de compétition.",
+    beforeLabel: "Organisation classique",
+    afterLabel: "Avec Inpoints",
+    rows: [
+      {
+        moment: "Inscriptions",
+        before: "Courriels, fichiers Excel des clubs, ressaisie dans une liste.",
+        after: "Un formulaire public ; les demandes se valident et deviennent la liste des engagés.",
+      },
+      {
+        moment: "Tirage et tableau",
+        before: "Tableau dessiné la veille, redessiné le matin après les absences.",
+        after: "Tirage refait en une seconde ; le tableau se lit depuis les rencontres.",
+      },
+      {
+        moment: "Accueil et pesée",
+        before: "Liste papier au guichet, reportée ensuite dans le tableau.",
+        after: "Ce qui est constaté au guichet entre directement dans le tableau.",
+      },
+      {
+        moment: "Arbitrage",
+        before: "Feuilles de score, calcul de tête, ressaisie le soir.",
+        after: "Le geste compte le point ; le journal est la feuille de score.",
+      },
+      {
+        moment: "Résultats",
+        before: "Classements recalculés sous Excel, publiés le lendemain.",
+        after: "Calculés depuis les rencontres, publiés à la clôture de la catégorie.",
+      },
     ],
-    quickAccessTitle: "Accès rapide",
-  },
-  personas: {
-    organiser: {
-      kicker: "Pour l'organisateur",
-      title: "Tenir une journée de compétition sans courir après l'information",
-      lead: "Une vingtaine d'écrans pour préparer, conduire et clore la compétition — groupés par moment de la journée, pas par menu.",
-      points: [
-        "Inscriptions, tirages et tableaux en un flux",
-        "Aires, planning et ordre de passage",
-        "Accueil, pesée et contrôles au guichet",
-        "Feuilles, exports et courriels aux clubs",
-      ],
-    },
-    official: {
-      kicker: "Pour les officiels",
-      title: "Un outil qui respecte le rôle de chacun",
-      lead: "Chaque officiel voit ce qu'il arbitre, et rien d'autre. Les droits ne sont pas un réglage d'écran : ils sont dans la base.",
-      points: [
-        "Console d'arbitrage sur tablette",
-        "Juges indépendants jusqu'à la clôture",
-        "Journal en ajout seul, corrections motivées",
-        "Continue de fonctionner si le réseau tombe",
-      ],
-    },
-    athlete: {
-      kicker: "Pour les athlètes et le public",
-      title: "Savoir quand on passe, et où",
-      lead: "Le versant suiveur n'est pas une page de consultation : c'est un compagnon de journée, ouvert sans compte pour le public.",
-      points: [
-        "Son horaire, son aire, son tableau",
-        "L'arrivée sur place : entrée, vestiaires, contacts",
-        "Résultats et palmarès personnels",
-        "Page publique pour les familles",
-      ],
-    },
-  },
-  security: {
-    kicker: "Sécurité",
-    titleA: "Un résultat officiel ne se retouche pas. ",
-    titleHl: "L'outil non plus.",
-    lead: "Les règles vivent dans la base de données, pas dans l'écran : ce que l'interface refuse, le serveur le refuse aussi.",
-    items: [
-      { title: "Sécurité en base", text: "Chaque ligne est protégée au niveau de la base, pas seulement de l'affichage." },
-      { title: "Journal en ajout seul", text: "Rien n'est effacé : annuler un geste ajoute une correction motivée." },
-      { title: "Rôles distincts", text: "Organisateur, chef arbitre, juge, athlète : des portes différentes." },
-      { title: "Arbitrage hors-ligne", text: "Un geste saisi sans réseau est conservé, et part à la reconnexion." },
-      { title: "Authentification individuelle", text: "Chaque officiel entre avec son compte, et ses gestes lui sont attribués." },
-      { title: "Infrastructure gérée", text: "Hébergement européen, sauvegardes régulières, mises à jour suivies." },
+    gains: [
+      { title: "Moins de tâches manuelles", text: "Aucune ressaisie entre l'accueil, l'aire et le podium." },
+      { title: "Moins d'erreurs", text: "Le classement est calculé, pas recopié d'une colonne à l'autre." },
+      { title: "Une meilleure coordination", text: "Aires, retards, rencontres en cours : tout le monde regarde la même chose." },
+      { title: "Des résultats immédiats", text: "Publiés à la fin de la rencontre, pas le lendemain matin." },
     ],
-    footnote: "Les mesures détaillées peuvent être communiquées sur demande, selon la configuration retenue.",
   },
-  adaptability: {
-    kicker: "Règlements",
-    titleA: "Votre règlement est unique. ",
-    titleHl: "Il se décrit, il ne se code pas.",
-    lead: "Barème, rounds, déductions, critères de classement : un règlement est une donnée de la plateforme, rattachée à la compétition qui l'applique.",
-    needLabel: "Ce qui se règle sans développement :",
-    variables: [
-      "le barème des actions",
-      "le nombre de rounds",
-      "les catégories et les tranches",
-      "la formule de compétition",
-      "les critères de classement",
-      "les groupes de jugement",
-      "les rôles d'officiels",
-      "les déductions et pénalités",
-    ],
-    note: "Une discipline nouvelle se décrit dans un règlement. Ce qui dépasse le cadre peut être étudié avec vous, sans repartir de zéro.",
-  },
-  pricing: {
-    kicker: "Tarifs",
-    title: "Une tarification adaptée à vos compétitions",
-    lead: "Le tarif dépend du nombre de compétitions, de leur taille et des modules retenus. Nous construisons une proposition claire, sans engagement caché.",
+  quote: {
+    kicker: "Devis",
+    title: "Construisons votre prochaine compétition",
+    lead: "Parlez-nous de votre journée type — discipline, nombre de participants, nombre d'aires — et nous construisons une proposition claire, sans engagement caché.",
     badge: "Sur mesure",
     price: "Sur devis",
-    priceSub: "Une offre construite avec vous",
+    priceSub: "Le tarif dépend du nombre de compétitions, de leur taille et des modules retenus.",
     included: [
-      "Tous les modules de compétition",
+      "Tous les outils de compétition",
       "Accompagnement sur votre premier événement",
       "Officiels et rôles selon vos besoins",
       "Votre règlement décrit avec vous",
     ],
-    cta: "Demander une démonstration",
-  },
-  finalCta: {
-    kicker: "Contact",
-    title: "Prêt à tenir votre prochaine compétition sans papier ?",
-    lead: "Montrez-nous votre journée type : nous la rejouons dans Inpoints, avec votre règlement, vos catégories et vos aires. La démonstration sert à cela.",
     reassurance: [
+      "Réponse sous quelques jours ouvrés",
       "Démonstration en visio, à votre rythme",
       "Sans engagement",
-      "Réponse sous quelques jours ouvrés",
     ],
     orWrite: "Ou écrivez-nous à ",
   },
@@ -320,25 +232,24 @@ export const fr = {
     role: "Votre fonction",
     message: "Message",
     optional: "(optionnel)",
-    messagePlaceholder: "Parlez-nous de vos compétitions : discipline, taille, nombre d'aires…",
-    submit: "Demander une démonstration",
+    messagePlaceholder: "Parlez-nous de vos compétitions : discipline, nombre de participants, nombre d'aires, nombre de compétitions par an…",
+    submit: "Demander un devis",
     submitting: "Envoi en cours…",
     successTitle: "Demande envoyée",
     successText:
-      "Merci ! Nous revenons vers vous rapidement pour organiser votre démonstration personnalisée.",
+      "Merci ! Nous revenons vers vous rapidement avec une proposition adaptée à vos compétitions.",
     another: "Envoyer une autre demande",
     error: "Une erreur est survenue. Merci de réessayer dans un instant.",
     privacy: "Nous utilisons vos informations uniquement pour vous recontacter.",
   },
   footer: {
     description:
-      "La plateforme qui gère la compétition de bout en bout : inscriptions, tirages, arbitrage, direct et résultats officiels.",
-    columns: {
-      platform: { title: "Plateforme", links: ["Fonctionnalités", "Application", "Sécurité", "Tarifs"] },
-      resources: { title: "Ressources", links: ["Documentation", "Support", "FAQ"] },
-      company: { title: "Entreprise", links: ["À propos", "Contact"] },
-      legal: { title: "Légal", links: ["Confidentialité", "Mentions légales", "CGU", "Cookies"] },
-    },
+      "Le logiciel qui vous accompagne à chaque compétition : inscriptions, brackets, arbitrage, direct et résultats.",
+    contactTitle: "Contact",
+    navTitle: "Navigation",
+    legalTitle: "Légal",
+    nav: ["Sports", "Outils", "Fonctionnalités", "Application", "Devis"],
+    legal: ["Confidentialité", "Mentions légales", "CGU", "Cookies"],
     rights: "Tous droits réservés.",
     madeFor: "Conçu pour les organisateurs de compétitions.",
     siblingLabel: "L'application sœur, côté fédération :",
@@ -503,6 +414,26 @@ export const fr = {
         medal: "Médaille",
       },
       medals: { gold: "Or", silver: "Argent", bronze: "Bronze" },
+    },
+    registration: {
+      title: "Demandes d'inscription",
+      form: "Formulaire public",
+      inbox: "Boîte de réception",
+      count: "6 demandes en attente",
+      fields: ["Athlète", "Club", "Catégorie", "N° de licence"],
+      submit: "Envoyer la demande",
+      actions: { validate: "Valider", refuse: "Refuser", fix: "À corriger" },
+      validated: "Ajouté aux engagés",
+    },
+    live: {
+      title: "Page publique",
+      now: "En ce moment",
+      next: "À suivre",
+      results: "Derniers résultats",
+      mine: "Votre prochaine rencontre",
+      eta: "Estimée",
+      court: "Aire",
+      followers: "spectateurs connectés",
     },
   },
   lang: {
