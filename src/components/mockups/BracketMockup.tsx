@@ -63,7 +63,7 @@ export function BracketMockup({ className }: { className?: string }) {
                     className={cn(
                       "overflow-hidden rounded-md border bg-[var(--color-surface)]",
                       bout.live
-                        ? "border-[var(--color-primary)]/60 shadow-[0_0_0_1px_rgba(79,209,232,0.15)]"
+                        ? "border-[var(--color-primary)]"
                         : "border-[var(--color-line)]",
                     )}
                   >

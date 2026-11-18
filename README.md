@@ -43,8 +43,12 @@ depuis sa propre architecture, en huit temps :
 | Bordure        | `#223252` |
 | Texte          | `#eef4fc` |
 | Secondaire     | `#9bacc6` |
-| Accent (aplat) | `#0b7aab` |
-| Accent (texte) | `#4fd1e8` |
+| Accent (aplat) | `#3461a8` |
+| Accent (texte) | `#8eabdc` |
+| Logo           | `#3461a8` · `#6e8db5` |
+
+La page est en aplats : ni halo, ni grain, ni dégradé, ni ombre portée. La
+profondeur vient des surfaces et d'un filet d'un pixel.
 
 Deux familles ne suivent aucun thème, parce qu'elles viennent du terrain et
 non d'une charte :

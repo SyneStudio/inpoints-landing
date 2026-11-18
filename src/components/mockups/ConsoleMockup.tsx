@@ -24,6 +24,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useT } from "@/lib/i18n/provider";
+import { LogoMark } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 
 /**
@@ -78,9 +79,7 @@ export function ConsoleMockup({ className }: { className?: string }) {
       {/* Barre latérale — la navigation réelle de l'application */}
       <aside className="hidden w-[178px] shrink-0 flex-col gap-0.5 overflow-hidden border-r border-[var(--color-line)] bg-[#08101d] p-3 sm:flex">
         <div className="mb-2 flex items-center gap-2 px-1">
-          <span className="grid h-6 w-6 place-items-center rounded-md bg-[var(--color-primary)] text-[9px] font-bold text-white">
-            iP
-          </span>
+          <LogoMark size={18} />
           <span className="text-[12px] font-bold">Inpoints</span>
         </div>
         {nav.map((e, i) =>
@@ -231,7 +230,7 @@ function Stat({
   tone?: "default" | "accent";
 }) {
   return (
-    <div className="rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] p-2.5 edge-light">
+    <div className="rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] p-2.5">
       <div className="mb-1.5 flex items-center justify-between text-[var(--color-faint)]">
         <Icon size={13} />
         <ChevronRight size={11} />

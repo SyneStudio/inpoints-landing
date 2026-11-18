@@ -120,8 +120,7 @@ export function CombatSports() {
               height: radius * 2,
               top: cardH / 2 + 24,
               transform: "translateX(-50%)",
-              maskImage: "linear-gradient(to bottom, black 0%, transparent 28%)",
-              WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 28%)",
+              clipPath: "inset(0 0 72% 0)",
             }}
           />
 
@@ -177,7 +176,12 @@ export function CombatSports() {
                   }}
                   className="absolute"
                 >
-                  <SportCard sport={s} name={t.sports.names[s.key]} active={d === 0} />
+                  <SportCard
+                    sport={s}
+                    name={t.sports.names[s.key]}
+                    index={String(i + 1).padStart(2, "0")}
+                    active={d === 0}
+                  />
                 </motion.button>
               );
             })}
@@ -241,34 +245,38 @@ export function CombatSports() {
 function SportCard({
   sport,
   name,
+  index,
   active,
 }: {
   sport: CombatSport;
   name: string;
+  index: string;
   active: boolean;
 }) {
-  const tint = `hsl(${sport.hue} 70% 60% / 0.16)`;
   return (
     <span
       className={cn(
-        "relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[var(--radius-lg)] border p-4 text-left transition-colors duration-300 edge-light",
+        "relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[var(--radius-lg)] border p-4 text-left transition-colors duration-300",
         active
-          ? "border-[var(--color-primary)]/60 bg-[var(--color-surface-2)] shadow-[0_24px_60px_-20px_rgba(79,209,232,0.35)]"
-          : "border-[var(--color-line)] bg-[var(--color-surface)] shadow-card",
+          ? "border-[var(--color-primary)] bg-[var(--color-surface-2)]"
+          : "border-[var(--color-line)] bg-[var(--color-surface)]",
       )}
     >
-      {/* Un halo teinté, propre à chaque carte */}
-      <span
+      {/* Le quart de cercle du logo, logé dans le coin : plein sur la carte
+          choisie, à peine marqué sur les autres. */}
+      <svg
+        viewBox="0 0 24 24"
         aria-hidden
-        className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-2xl"
-        style={{ background: tint }}
-      />
-      {/* Un tatami stylisé : deux traits, un point */}
-      <svg viewBox="0 0 40 40" className="h-8 w-8 text-[var(--color-primary-soft)]" aria-hidden>
-        <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
-        <circle cx="20" cy="20" r="8" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.8" />
-        <circle cx="20" cy="20" r="2" fill="currentColor" />
+        className={cn(
+          "pointer-events-none absolute right-0 top-0 h-[44%] w-auto transition-colors duration-300",
+          active ? "text-[var(--color-primary)]" : "text-[var(--color-surface-2)]",
+        )}
+      >
+        <path d="M0 0H24V24A24 24 0 0 1 0 0Z" fill="currentColor" />
       </svg>
+      <span className="relative font-mono text-[11px] tracking-[0.14em] text-[var(--color-faint)]">
+        {index}
+      </span>
       <span className="relative">
         <span
           className={cn(

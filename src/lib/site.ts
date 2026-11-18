@@ -6,9 +6,9 @@ export const siteConfig = {
   name: "Inpoints",
   /** L'éditeur, tel qu'il figure dans les mentions légales : une personne, pas une société. */
   legalName: "Théo Bauweleers — Syne Studio",
-  tagline: "Le logiciel qui vous accompagne à chaque compétition",
+  tagline: "Organisez vos compétitions de bout en bout",
   description:
-    "Inpoints accompagne l'organisation d'une compétition de sports de combat de l'inscription aux résultats : participants, brackets, arbitrage électronique, direct, écran géant et classements. Application sœur d'InSports.",
+    "Inpoints est le logiciel de gestion de compétitions pour les sports de combat : inscriptions, participants, tableaux, arbitrage électronique, direct, écran géant et classements. Application sœur d'InSports.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://inpoints-landing.vercel.app",
   locale: "fr_FR",
   email: "contact@insport.app",

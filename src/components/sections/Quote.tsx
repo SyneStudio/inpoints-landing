@@ -23,9 +23,6 @@ export function Quote() {
 
   return (
     <Section id="devis" className="relative overflow-hidden">
-      <div className="brand-glow pointer-events-none absolute left-1/2 top-0 h-[600px] w-[1000px] -translate-x-1/2 -translate-y-1/3 rounded-full opacity-80" />
-      <div className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(circle_at_50%_0%,black,transparent_60%)]" />
-
       <Container size="wide" className="relative">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:items-start lg:gap-16">
           <div id="contact" className="scroll-mt-24">
@@ -37,8 +34,7 @@ export function Quote() {
 
             {/* Sur devis */}
             <Reveal delay={0.1}>
-              <div className="relative mt-8 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-primary)]/35 bg-gradient-to-br from-[var(--color-surface-2)] to-[var(--color-surface)] p-6 edge-light">
-                <div className="brand-glow absolute -right-16 -top-16 h-48 w-48 rounded-full" />
+              <div className="relative mt-8 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-line-strong)] bg-[var(--color-surface)] p-6">
                 <div className="relative">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <p className="text-3xl font-extrabold tracking-tight">{q.price}</p>

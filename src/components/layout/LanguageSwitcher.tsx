@@ -55,7 +55,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
       <div
         role="listbox"
         className={cn(
-          "absolute right-0 top-[calc(100%+8px)] z-50 w-52 origin-top-right overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-line)] bg-[var(--color-surface)] p-1 shadow-card transition-all duration-150",
+          "absolute right-0 top-[calc(100%+8px)] z-50 w-52 origin-top-right overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-line)] bg-[var(--color-surface)] p-1 transition-all duration-150",
           open
             ? "pointer-events-auto scale-100 opacity-100"
             : "pointer-events-none scale-95 opacity-0",

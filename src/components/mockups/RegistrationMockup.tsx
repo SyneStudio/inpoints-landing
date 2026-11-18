@@ -59,7 +59,7 @@ export function RegistrationMockup({ className }: { className?: string }) {
                 className={cn(
                   "h-6 rounded-md border bg-[var(--color-bg)] px-2 text-[9.5px] leading-6",
                   i === 2
-                    ? "border-[var(--color-primary)]/60 text-[var(--color-fg)] shadow-[0_0_0_2px_rgba(79,209,232,0.12)]"
+                    ? "border-[var(--color-primary)] text-[var(--color-fg)]"
                     : "border-[var(--color-line)] text-[var(--color-muted)]",
                 )}
               >

@@ -54,8 +54,7 @@ export function LiveMockup({ className }: { className?: string }) {
 
       <div className="min-h-0 flex-1 space-y-3 overflow-hidden px-3.5 py-3">
         {/* Ma prochaine rencontre */}
-        <div className="relative overflow-hidden rounded-lg border border-[var(--color-primary)]/40 bg-gradient-to-br from-[var(--color-surface-2)] to-[var(--color-surface)] p-2.5">
-          <div className="brand-glow absolute -right-8 -top-8 h-24 w-24 rounded-full" />
+        <div className="relative overflow-hidden rounded-lg border border-[var(--color-primary)]/60 bg-[var(--color-surface-2)] p-2.5">
           <p className="text-[8px] font-semibold uppercase tracking-wider text-[var(--color-primary-soft)]">
             {l.mine}
           </p>
@@ -165,7 +164,7 @@ export function PhoneFrame({
   return (
     <div
       className={cn(
-        "relative aspect-[9/19] w-full overflow-hidden rounded-[30px] border border-[var(--color-line-strong)] bg-[#06090f] p-2 shadow-card edge-light",
+        "relative aspect-[9/19] w-full overflow-hidden rounded-[30px] border border-[var(--color-line-strong)] bg-[#06090f] p-2",
         className,
       )}
     >
