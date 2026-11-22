@@ -12,16 +12,15 @@ import { ArrowRight, PlayCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { HeroBackground } from "@/components/sections/HeroBackground";
-import { ConsoleMockup } from "@/components/mockups/ConsoleMockup";
-import { ScaledFrame } from "@/components/ui/ScaledFrame";
+import { DashboardShot } from "@/components/mockups/DashboardShot";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { useT } from "@/lib/i18n/provider";
 
 /**
  * Le hero — celui d'InSports, à l'identique : halos et grille en fond, un
  * titre dont la fin passe en dégradé, deux boutons, et l'écran du produit qui
- * s'incline en suivant la souris. Ici l'écran est la console du jour, et
- * l'accent est bleu.
+ * s'incline en suivant la souris. Ici l'écran est une capture du tableau de
+ * bord de l'application, telle quelle.
  */
 export function Hero() {
   const t = useT();
@@ -91,7 +90,14 @@ export function Hero() {
           </div>
 
           {/* L'écran incliné */}
-          <HeroConsole ref={ref} onMove={onMove} onLeave={onLeave} rx={rx} ry={ry} />
+          <HeroConsole
+            ref={ref}
+            onMove={onMove}
+            onLeave={onLeave}
+            rx={rx}
+            ry={ry}
+            alt={t.app.screens.dashboard}
+          />
         </div>
       </Container>
     </section>
@@ -104,8 +110,10 @@ function HeroConsole({
   onLeave,
   rx,
   ry,
+  alt,
 }: {
   ref: React.Ref<HTMLDivElement>;
+  alt: string;
   onMove: (e: React.MouseEvent<HTMLDivElement>) => void;
   onLeave: () => void;
   rx: MotionValue<number>;
@@ -128,9 +136,7 @@ function HeroConsole({
         {/* l'ombre au sol */}
         <div className="absolute -inset-x-6 -bottom-8 h-16 rounded-full bg-black/40 blur-2xl" />
         <div className="shadow-card relative w-full overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-line-strong)] edge-light">
-          <ScaledFrame aspect={16 / 11}>
-            <ConsoleMockup className="h-full" />
-          </ScaledFrame>
+          <DashboardShot alt={alt} eager sizes="(min-width: 1024px) 50vw, 100vw" />
         </div>
       </motion.div>
     </motion.div>

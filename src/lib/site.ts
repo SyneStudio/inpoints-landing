@@ -11,7 +11,7 @@ export const siteConfig = {
     "Inpoints est le logiciel de gestion de compétitions pour les sports de combat : inscriptions, participants, tableaux, arbitrage électronique, direct, écran géant et classements. Application sœur d'InSports.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://inpoints-landing.vercel.app",
   locale: "fr_FR",
-  email: "synestudio@gmail.com",
+  email: "synestudio@hotmail.com",
   /** Le site vitrine de l'application sœur — lien croisé dans le pied de page. */
   siblingName: "InSports",
   siblingUrl: "https://insport-landing.vercel.app",

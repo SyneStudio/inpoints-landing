@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { fontSans, fontMono } from "@/lib/fonts";
+import { fontSans, fontMono, fontApp } from "@/lib/fonts";
 import { siteConfig } from "@/lib/site";
 import { I18nProvider } from "@/lib/i18n/provider";
 import "./globals.css";
@@ -62,7 +62,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${fontSans.variable} ${fontMono.variable}`}>
+    <html lang="fr" className={`${fontSans.variable} ${fontMono.variable} ${fontApp.variable}`}>
       <body>
         <script
           type="application/ld+json"

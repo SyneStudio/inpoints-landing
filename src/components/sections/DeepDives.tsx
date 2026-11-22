@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import type { StaticImageData } from "next/image";
 import { Check } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -9,20 +10,25 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Reveal } from "@/components/ui/Reveal";
 import { Highlight } from "@/components/ui/Highlight";
 import { Kicker } from "@/components/ui/Kicker";
-import { BracketMockup } from "@/components/mockups/BracketMockup";
-import { RegistrationMockup } from "@/components/mockups/RegistrationMockup";
-import { ScoringMockup } from "@/components/mockups/ScoringMockup";
+import { AppShot } from "@/components/ui/AppShot";
+import draws from "@/assets/app/draws.webp";
+import { RegistrationsShot } from "@/components/mockups/RegistrationsShot";
+import matches from "@/assets/app/matches-top.webp";
+import zoomPool from "@/assets/app/zoom-pool.webp";
+import zoomLink from "@/assets/app/zoom-link.webp";
+import zoomMatch from "@/assets/app/zoom-match.webp";
 import { ScoreboardMockup } from "@/components/mockups/ScoreboardMockup";
 import { LiveMockup, PhoneFrame } from "@/components/mockups/LiveMockup";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { useT } from "@/lib/i18n/provider";
 import { cn } from "@/lib/utils";
 
+const shotSizes = "(min-width: 1024px) 55vw, 100vw";
+
 /**
  * Les quatre outils primordiaux, en quatre grands blocs qui alternent le côté
- * du visuel. Les maquettes sont ici à leur taille réelle de lecture — assez
- * grandes pour qu'on lise un nom, un score, une heure — parce que c'est ce
- * qu'un organisateur veut vérifier avant de demander un devis.
+ * du visuel. Les visuels sont des captures de l'application, telles quelles ;
+ * seul le direct garde sa maquette, en attendant la sienne.
  */
 export function DeepDives() {
   const t = useT();
@@ -45,22 +51,21 @@ export function DeepDives() {
 
         <div className="mt-20 space-y-24 lg:mt-28 lg:space-y-36">
           <Block id="bracket" index="01" copy={d.bracket} side="left">
-            <Frame aspect="aspect-[16/10]">
-              <BracketMockup className="h-full" />
-            </Frame>
+            <Spotlight zoom={zoomPool} className="right-0 -bottom-12 w-[82%] sm:w-[62%] lg:-right-8">
+              <AppShot src={draws} alt={d.bracket.kicker} sizes={shotSizes} />
+            </Spotlight>
           </Block>
 
           <Block id="inscriptions" index="02" copy={d.registration} side="right">
-            <Frame aspect="aspect-[16/10]">
-              <RegistrationMockup className="h-full" />
-            </Frame>
+            <Spotlight zoom={zoomLink} className="right-0 -bottom-10 w-[46%] sm:w-[36%] lg:-right-8">
+              <RegistrationsShot alt={d.registration.kicker} sizes={shotSizes} />
+            </Spotlight>
           </Block>
 
           <Block id="arbitrage" index="03" copy={d.scoring} side="left">
-            {/* La console sur tablette : un cadre plus épais, et rien d'autre. */}
-            <Frame aspect="aspect-[4/3]" className="rounded-[26px] border-[6px] border-[#06090f] p-0 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.9)]">
-              <ScoringMockup className="h-full rounded-[18px]" />
-            </Frame>
+            <Spotlight zoom={zoomMatch} className="right-0 -bottom-12 w-[92%] sm:w-[78%] lg:-right-8">
+              <AppShot src={matches} alt={d.scoring.kicker} sizes={shotSizes} />
+            </Spotlight>
           </Block>
 
           <Block id="direct" index="04" copy={d.live} side="right">
@@ -152,12 +157,41 @@ function Block({
   );
 }
 
+/**
+ * L'écran entier, et par-dessus, agrandie, la partie qui porte la
+ * fonctionnalité : un morceau de la même capture, à une taille où il se lit.
+ */
+function Spotlight({
+  zoom,
+  className,
+  children,
+}: {
+  zoom: StaticImageData;
+  /** Place et largeur du zoom, relatives au cadre. */
+  className: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="relative mb-12">
+      <Frame>{children}</Frame>
+      <div className={cn("absolute", className)}>
+        <Reveal delay={0.2}>
+          <div className="overflow-hidden rounded-[var(--radius)] border border-[var(--color-primary)]/60 bg-[#0e1626] shadow-[0_24px_60px_-12px_rgba(0,0,0,0.75),0_0_0_6px_rgba(59,108,255,0.10)]">
+            <AppShot src={zoom} alt="" sizes="(min-width: 1024px) 40vw, 80vw" />
+          </div>
+        </Reveal>
+      </div>
+    </div>
+  );
+}
+
 function Frame({
   aspect,
   className,
   children,
 }: {
-  aspect: string;
+  /** Absent pour une capture : c'est l'image qui donne sa hauteur au cadre. */
+  aspect?: string;
   className?: string;
   children: React.ReactNode;
 }) {

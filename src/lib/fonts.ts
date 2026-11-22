@@ -1,4 +1,4 @@
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Oswald } from "next/font/google";
 
 /**
  * Type system — kept deliberately close to the InSports application itself.
@@ -19,4 +19,13 @@ export const fontMono = JetBrains_Mono({
   variable: "--ff-mono",
   display: "swap",
   weight: ["400", "500", "600"],
+});
+
+/** Oswald — la police des titres de l'application. Elle ne sert ici qu'aux
+ *  textes réécrits sur les captures d'écran, pour qu'ils s'y fondent. */
+export const fontApp = Oswald({
+  subsets: ["latin"],
+  variable: "--ff-app",
+  display: "swap",
+  weight: ["500", "600"],
 });

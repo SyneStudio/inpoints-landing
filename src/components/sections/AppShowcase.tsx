@@ -3,32 +3,36 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ShieldCheck, ScrollText, WifiOff, Server, type LucideIcon } from "lucide-react";
+import type { StaticImageData } from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Reveal } from "@/components/ui/Reveal";
 import { Highlight } from "@/components/ui/Highlight";
-import { ConsoleMockup } from "@/components/mockups/ConsoleMockup";
-import { ParticipantsMockup } from "@/components/mockups/ParticipantsMockup";
-import { BracketMockup } from "@/components/mockups/BracketMockup";
-import { PlanningMockup } from "@/components/mockups/PlanningMockup";
-import { ScoringMockup } from "@/components/mockups/ScoringMockup";
-import { ResultsMockup } from "@/components/mockups/ResultsMockup";
-import { ScoreboardMockup } from "@/components/mockups/ScoreboardMockup";
+import { AppShot } from "@/components/ui/AppShot";
+import { DashboardShot } from "@/components/mockups/DashboardShot";
+import competitions from "@/assets/app/competitions.webp";
+import { RegistrationsShot } from "@/components/mockups/RegistrationsShot";
+import desk from "@/assets/app/desk.webp";
+import organisation from "@/assets/app/organisation-top.webp";
+import draws from "@/assets/app/draws.webp";
+import matches from "@/assets/app/matches-top.webp";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { useT } from "@/lib/i18n/provider";
 import { cn } from "@/lib/utils";
 
+type Kind = "dashboard" | "registrations";
+
 const trustIcons: LucideIcon[] = [ShieldCheck, ScrollText, WifiOff, Server];
 
 /**
- * L'application dans son ensemble. Sept écrans, posés dans l'espace comme sur
- * une table : la console au centre, et de part et d'autre, en léger retrait,
- * ce qui la nourrit et ce qu'elle produit. Au défilement, les ailes s'ouvrent
- * et le centre s'avance — on entre dans le logiciel, on ne le feuillette pas.
+ * L'application dans son ensemble, en captures réelles. Le tableau de bord au
+ * centre, et de part et d'autre, en léger retrait, deux outils par aile. Au
+ * défilement, les ailes s'ouvrent et le centre s'avance. Aucun écran n'en
+ * recouvre un autre : chaque capture se lit en entier, avec son nom dessous.
  *
- * Sous 1024 px, la table devient une piste horizontale à crans : même écrans,
- * même ordre, un par vue.
+ * Sous 1024 px, la table devient une piste horizontale à crans : un écran
+ * par vue.
  */
 export function AppShowcase() {
   const t = useT();
@@ -44,6 +48,15 @@ export function AppShowcase() {
   const centerY = useTransform(p, [0, 1], reduced ? [0, 0] : [40, 0]);
 
   const s = t.app.screens;
+  const track: { label: string; src?: StaticImageData; kind?: Kind }[] = [
+    { label: s.dashboard, kind: "dashboard" },
+    { label: s.competitions, src: competitions },
+    { label: s.registrations, kind: "registrations" },
+    { label: s.desk, src: desk },
+    { label: s.organisation, src: organisation },
+    { label: s.draws, src: draws },
+    { label: s.matches, src: matches },
+  ];
 
   return (
     <Section id="application" className="overflow-hidden">
@@ -64,72 +77,43 @@ export function AppShowcase() {
       {/* La table, à partir de 1024 px */}
       <div ref={ref} className="relative mx-auto mt-16 hidden max-w-[1500px] px-8 lg:block">
         <div className="brand-glow pointer-events-none absolute left-1/2 top-1/2 h-[700px] w-[1100px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70" />
-        <div className="relative grid grid-cols-[1.1fr_1.45fr_1.1fr] items-center gap-6 [perspective:2200px]">
-          {/* Aile gauche : ce qui nourrit la journée */}
+        <div className="relative grid grid-cols-[1.1fr_1.45fr_1.1fr] items-center gap-8 [perspective:2200px]">
+          {/* Aile gauche : ce qui prépare la journée */}
           <motion.div
             style={{ x: leftX, opacity: wingsOpacity, rotateY: 16, transformStyle: "preserve-3d" }}
-            className="space-y-6 origin-right"
+            className="origin-right space-y-10"
           >
-            <Screen label={s.participants} aspect="aspect-[16/11]">
-              <ParticipantsMockup className="h-full" />
-            </Screen>
-            <Screen label={s.planning} aspect="aspect-[16/11]">
-              <PlanningMockup className="h-full" />
-            </Screen>
+            <Screen label={s.registrations} kind="registrations" sizes="30vw" />
+            <Screen label={s.organisation} src={organisation} sizes="30vw" />
           </motion.div>
 
-          {/* Le centre : l'écran géant derrière, la console devant, la
-              console d'arbitrage qui déborde en bas */}
-          <motion.div style={{ scale: centerScale, y: centerY }} className="relative z-10 pt-16 pb-20">
-            <div className="absolute inset-x-[12%] top-0 z-0">
-              <Screen label={s.scoreboard} aspect="aspect-[16/7]" className="bg-[var(--color-surface)] p-1.5 opacity-90">
-                <div className="h-full overflow-hidden rounded-[6px]">
-                  <ScoreboardMockup className="h-full" />
-                </div>
-              </Screen>
-            </div>
-            <div className="relative z-10">
-              <Screen label={s.console} aspect="aspect-[16/11]" className="shadow-[0_40px_100px_-30px_rgba(0,0,0,0.9)]">
-                <ConsoleMockup className="h-full" />
-              </Screen>
-            </div>
-            <div className="absolute inset-x-[18%] bottom-0 z-20">
-              <Screen label={s.scoring} aspect="aspect-[16/7]" className="rounded-[18px] border-[4px] border-[#06090f]">
-                <ScoringMockup className="h-full rounded-[12px]" />
-              </Screen>
-            </div>
+          {/* Le centre : le tableau de bord, seul */}
+          <motion.div style={{ scale: centerScale, y: centerY }} className="relative z-10">
+            <Screen
+              label={s.dashboard}
+              kind="dashboard"
+              sizes="40vw"
+              className="shadow-[0_40px_100px_-30px_rgba(0,0,0,0.9)]"
+            />
           </motion.div>
 
-          {/* Aile droite : ce que la journée produit */}
+          {/* Aile droite : ce qui se passe sur le tapis */}
           <motion.div
             style={{ x: rightX, opacity: wingsOpacity, rotateY: -16, transformStyle: "preserve-3d" }}
-            className="space-y-6 origin-left"
+            className="origin-left space-y-10"
           >
-            <Screen label={s.draws} aspect="aspect-[16/11]">
-              <BracketMockup className="h-full" />
-            </Screen>
-            <Screen label={s.results} aspect="aspect-[16/11]">
-              <ResultsMockup className="h-full" />
-            </Screen>
+            <Screen label={s.draws} src={draws} sizes="30vw" />
+            <Screen label={s.matches} src={matches} sizes="30vw" />
           </motion.div>
         </div>
       </div>
 
       {/* La piste, sous 1024 px */}
       <div className="mt-12 lg:hidden">
-        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {[
-            { label: s.console, node: <ConsoleMockup className="h-full" /> },
-            { label: s.participants, node: <ParticipantsMockup className="h-full" /> },
-            { label: s.draws, node: <BracketMockup className="h-full" /> },
-            { label: s.planning, node: <PlanningMockup className="h-full" /> },
-            { label: s.scoring, node: <ScoringMockup className="h-full" /> },
-            { label: s.results, node: <ResultsMockup className="h-full" /> },
-          ].map((item) => (
+        <div className="flex snap-x snap-mandatory items-center gap-4 overflow-x-auto px-5 pb-4 sm:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {track.map((item) => (
             <div key={item.label} className="w-[82vw] max-w-[560px] shrink-0 snap-center sm:w-[70vw]">
-              <Screen label={item.label} aspect="aspect-[16/11]">
-                {item.node}
-              </Screen>
+              <Screen label={item.label} src={item.src} kind={item.kind} sizes="82vw" />
             </div>
           ))}
         </div>
@@ -160,19 +144,27 @@ export function AppShowcase() {
   );
 }
 
+/** Une capture dans son cadre, et son nom posé dessous, hors de l'image. */
 function Screen({
   label,
+  src,
+  kind,
+  sizes,
   aspect,
   className,
-  children,
 }: {
   label: string;
-  aspect: string;
+  /** Une capture telle quelle… */
+  src?: StaticImageData;
+  /** …ou l'un des deux écrans dont des textes sont réécrits. */
+  kind?: Kind;
+  sizes: string;
+  /** Proportions fixes (la capture est alors rognée) ; sinon celles de l'image. */
+  aspect?: string;
   className?: string;
-  children: React.ReactNode;
 }) {
   return (
-    <div className="group relative">
+    <figure className="group">
       <div
         className={cn(
           "shadow-card relative w-full overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-line-strong)] edge-light transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:-translate-y-1",
@@ -180,11 +172,17 @@ function Screen({
           className,
         )}
       >
-        {children}
+        {src ? (
+          <AppShot src={src} alt={label} sizes={sizes} cover={Boolean(aspect)} />
+        ) : kind === "dashboard" ? (
+          <DashboardShot alt={label} sizes={sizes} />
+        ) : (
+          <RegistrationsShot alt={label} sizes={sizes} />
+        )}
       </div>
-      <span className="absolute -bottom-3 left-4 rounded-full border border-[var(--color-line-strong)] bg-[var(--color-bg)] px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted)]">
+      <figcaption className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted)]">
         {label}
-      </span>
-    </div>
+      </figcaption>
+    </figure>
   );
 }
