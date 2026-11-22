@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   motion,
   useMotionValue,
@@ -10,7 +10,8 @@ import {
 } from "framer-motion";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonEl } from "@/components/ui/Button";
+import { VideoDialog } from "@/components/ui/VideoDialog";
 import { HeroBackground } from "@/components/sections/HeroBackground";
 import { DashboardShot } from "@/components/mockups/DashboardShot";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
@@ -26,6 +27,7 @@ export function Hero() {
   const t = useT();
   const reduced = usePrefersReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
+  const [video, setVideo] = useState(false);
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -82,11 +84,18 @@ export function Hero() {
                 {t.hero.ctaPrimary}
                 <ArrowRight size={17} aria-hidden />
               </Button>
-              <Button href="#fonctionnalites" variant="secondary" size="lg">
+              <ButtonEl type="button" variant="secondary" size="lg" onClick={() => setVideo(true)}>
                 <PlayCircle size={17} aria-hidden />
                 {t.hero.ctaSecondary}
-              </Button>
+              </ButtonEl>
             </motion.div>
+            <VideoDialog
+              open={video}
+              onClose={() => setVideo(false)}
+              src="/video/presentation-inpoints.mp4"
+              title={t.hero.videoTitle}
+              closeLabel={t.hero.videoClose}
+            />
           </div>
 
           {/* L'écran incliné */}

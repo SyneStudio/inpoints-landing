@@ -18,6 +18,8 @@ export const de: Dict = {
     lead: "Anmeldungen, Tableaus, Kampfrichterwertung, Live und Ergebnisse: Inpoints bündelt den ganzen Wettkampftag auf einer einzigen Plattform.",
     ctaPrimary: "Angebot anfragen",
     ctaSecondary: "Software entdecken",
+    videoTitle: "Vorstellung von Inpoints",
+    videoClose: "Video schließen",
     keywords: [
       "Anmeldungen",
       "Teilnehmer",

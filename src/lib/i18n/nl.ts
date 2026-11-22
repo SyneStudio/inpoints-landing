@@ -18,6 +18,8 @@ export const nl: Dict = {
     lead: "Inschrijvingen, tabellen, jurering, live en resultaten: Inpoints brengt de hele wedstrijddag samen op één platform.",
     ctaPrimary: "Offerte aanvragen",
     ctaSecondary: "Ontdek de software",
+    videoTitle: "Voorstelling van Inpoints",
+    videoClose: "Video sluiten",
     keywords: [
       "Inschrijvingen",
       "Deelnemers",

@@ -18,6 +18,8 @@ export const en: Dict = {
     lead: "Registrations, brackets, refereeing, live and results: Inpoints brings the whole competition day together on a single platform.",
     ctaPrimary: "Request a quote",
     ctaSecondary: "Discover the software",
+    videoTitle: "Inpoints presentation",
+    videoClose: "Close the video",
     keywords: [
       "Registrations",
       "Participants",

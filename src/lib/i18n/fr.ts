@@ -16,6 +16,8 @@ export const fr = {
     lead: "Inscriptions, tableaux, arbitrage, direct et résultats : Inpoints réunit toute la journée de compétition sur une seule plateforme.",
     ctaPrimary: "Demander un devis",
     ctaSecondary: "Découvrir le logiciel",
+    videoTitle: "Présentation d'Inpoints",
+    videoClose: "Fermer la vidéo",
     keywords: [
       "Inscriptions",
       "Participants",
