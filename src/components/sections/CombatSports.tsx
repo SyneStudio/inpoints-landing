@@ -16,13 +16,11 @@ const COUNT = combatSports.length;
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 /**
- * « Pour tous les sports de combat » — un arc de cartes. Le centre du cercle
- * est sous la section : la discipline choisie est au sommet, les autres
- * descendent de part et d'autre le long de la courbe, penchées comme des
- * cartes en éventail. Changer de sport fait tourner tout l'arc.
- *
- * Aucune carte ne prétend connaître une règle : elles disent toutes la même
- * chose — le règlement se décrit — et c'est le propos de la section.
+ * « Pour tous les sports de combat » — la roue des sports d'InSports, à
+ * l'identique : même arc, mêmes cartes, mêmes gestes. Seules les disciplines
+ * changent. Le centre du cercle est sous la section : la discipline choisie
+ * est au sommet, les autres descendent de part et d'autre le long de la
+ * courbe. Changer de sport fait tourner tout l'arc.
  */
 export function CombatSports() {
   const t = useT();
@@ -75,7 +73,7 @@ export function CombatSports() {
   const step = mobile ? 30 : tablet ? 20 : 14;
   const maxAngle = mobile ? 34 : tablet ? 42 : 46;
   const cardW = mobile ? 128 : tablet ? 150 : 168;
-  const cardH = mobile ? 168 : tablet ? 196 : 220;
+  const cardH = mobile ? 152 : tablet ? 176 : 196;
   // La hauteur de la scène suit la géométrie : la carte la plus basse est
   // celle qui est à l'angle maximal.
   const drop = radius * (1 - Math.cos((maxAngle * Math.PI) / 180));
@@ -84,7 +82,7 @@ export function CombatSports() {
   const selected = combatSports[index];
 
   return (
-    <Section id="sports" band className="overflow-hidden">
+    <Section id="sports" className="overflow-hidden">
       <Container size="wide">
         <SectionTitle
           align="center"
@@ -107,7 +105,7 @@ export function CombatSports() {
           onMouseLeave={() => setHover(false)}
           onFocus={() => setHover(true)}
           onBlur={() => setHover(false)}
-          className="relative mx-auto mt-12 w-full max-w-[1400px] select-none outline-none focus-visible:[&>div:first-child]:ring-1 focus-visible:[&>div:first-child]:ring-[var(--color-primary-soft)]"
+          className="relative mx-auto mt-12 w-full max-w-[1400px] select-none overflow-hidden outline-none"
           style={{ height: stageHeight }}
         >
           {/* Le cercle lui-même, tracé finement : c'est lui qui donne la
@@ -120,12 +118,13 @@ export function CombatSports() {
               height: radius * 2,
               top: cardH / 2 + 24,
               transform: "translateX(-50%)",
-              clipPath: "inset(0 0 72% 0)",
+              maskImage: "linear-gradient(to bottom, black 0%, transparent 28%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 28%)",
             }}
           />
 
           <motion.div
-            className="absolute inset-0 cursor-grab active:cursor-grabbing"
+            className="absolute inset-0 cursor-grab touch-pan-y active:cursor-grabbing"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.06}
@@ -176,12 +175,7 @@ export function CombatSports() {
                   }}
                   className="absolute"
                 >
-                  <SportCard
-                    sport={s}
-                    name={t.sports.names[s.key]}
-                    index={String(i + 1).padStart(2, "0")}
-                    active={d === 0}
-                  />
+                  <SportCard sport={s} name={t.sports.names[s.key]} active={d === 0} />
                 </motion.button>
               );
             })}
@@ -205,9 +199,6 @@ export function CombatSports() {
               >
                 <p className="text-kicker">{t.sports.selected}</p>
                 <h3 className="mt-2 text-h3 font-extrabold">{t.sports.names[selected.key]}</h3>
-                <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[var(--color-muted)]">
-                  {t.sports.common}
-                </p>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -215,85 +206,32 @@ export function CombatSports() {
           <NavButton dir="next" label={t.sports.next} onClick={() => go(1)} />
         </div>
 
-        {/* Les points, un par discipline */}
-        <div className="mt-6 flex justify-center gap-1.5" aria-hidden>
-          {combatSports.map((s, i) => (
-            <button
-              key={s.key}
-              type="button"
-              tabIndex={-1}
-              onClick={() => {
-                setIndex(i);
-                setTouched(true);
-              }}
-              className={cn(
-                "h-1.5 rounded-full transition-all duration-300",
-                i === index
-                  ? "w-6 bg-[var(--color-primary-soft)]"
-                  : "w-1.5 bg-[var(--color-line-strong)] hover:bg-[var(--color-faint)]",
-              )}
-            />
-          ))}
-        </div>
-
-        <p className="mt-8 text-center text-sm text-[var(--color-faint)]">{t.sports.footnote}</p>
+        <p className="mt-6 text-center text-sm text-[var(--color-faint)]">{t.sports.footnote}</p>
       </Container>
     </Section>
   );
 }
 
-function SportCard({
-  sport,
-  name,
-  index,
-  active,
-}: {
-  sport: CombatSport;
-  name: string;
-  index: string;
-  active: boolean;
-}) {
+function SportCard({ sport, name, active }: { sport: CombatSport; name: string; active: boolean }) {
   return (
     <span
       className={cn(
-        "relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[var(--radius-lg)] border p-4 text-left transition-colors duration-300",
+        "relative flex h-full w-full flex-col items-center justify-center gap-3 overflow-hidden rounded-[var(--radius-lg)] border p-4 text-center transition-colors duration-300 edge-light",
         active
-          ? "border-[var(--color-primary)] bg-[var(--color-surface-2)]"
-          : "border-[var(--color-line)] bg-[var(--color-surface)]",
+          ? "border-[var(--color-primary)]/60 bg-[var(--color-surface-2)] shadow-[0_24px_60px_-20px_rgba(255,255,255,0.12)]"
+          : "border-[var(--color-line)] bg-[var(--color-surface)] shadow-card",
       )}
     >
-      {/* Le quart de cercle du logo, logé dans le coin : plein sur la carte
-          choisie, à peine marqué sur les autres. */}
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden
+      <span className={cn("leading-none", active ? "text-5xl" : "text-4xl")} aria-hidden>
+        {sport.glyph}
+      </span>
+      <span
         className={cn(
-          "pointer-events-none absolute right-0 top-0 h-[44%] w-auto transition-colors duration-300",
-          active ? "text-[var(--color-primary)]" : "text-[var(--color-surface-2)]",
+          "block text-[13px] font-semibold",
+          active ? "text-[var(--color-fg)]" : "text-[var(--color-faint)]",
         )}
       >
-        <path d="M0 0H24V24A24 24 0 0 1 0 0Z" fill="currentColor" />
-      </svg>
-      <span className="relative font-mono text-[11px] tracking-[0.14em] text-[var(--color-faint)]">
-        {index}
-      </span>
-      <span className="relative">
-        <span
-          className={cn(
-            "block font-mono font-semibold leading-none tracking-tight",
-            active ? "text-[44px] text-[var(--color-fg)]" : "text-[36px] text-[var(--color-muted)]",
-          )}
-        >
-          {sport.code}
-        </span>
-        <span
-          className={cn(
-            "mt-2 block text-[13px] font-semibold",
-            active ? "text-[var(--color-primary-soft)]" : "text-[var(--color-faint)]",
-          )}
-        >
-          {name}
-        </span>
+        {name}
       </span>
     </span>
   );

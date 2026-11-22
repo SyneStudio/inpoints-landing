@@ -9,10 +9,12 @@ export const en: Dict = {
     application: "Application",
     quote: "Quote",
     contact: "Contact us",
+    login: "Sign in",
     demo: "Request a quote",
   },
   hero: {
-    title: "Run your competitions from start to finish",
+    titleA: "Run your competitions ",
+    titleHl: "from start to finish.",
     lead: "Registrations, brackets, refereeing, live and results: Inpoints brings the whole competition day together on a single platform.",
     ctaPrimary: "Request a quote",
     ctaSecondary: "Discover the software",

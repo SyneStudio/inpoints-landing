@@ -85,15 +85,21 @@ export function TimeSaving() {
         </Reveal>
 
         {/* Les quatre effets */}
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {ts.gains.map((g, i) => {
             const Icon = gainIcons[i];
             return (
-              <Reveal key={g.title} delay={0.1 + i * 0.05}>
-                <Card className="p-5">
-                  <CardIcon icon={Icon} size={17} className="h-10 w-10" />
-                  <h3 className="mt-4 text-[15px] font-bold">{g.title}</h3>
-                  <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--color-muted)]">{g.text}</p>
+              <Reveal key={g.title} delay={(i % 2) * 0.05}>
+                <Card className="h-full p-5">
+                  <div className="flex items-start gap-3.5">
+                    <CardIcon icon={Icon} className="h-11 w-11" />
+                    <div>
+                      <h3 className="text-[1.05rem] font-bold">{g.title}</h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-muted)]">
+                        {g.text}
+                      </p>
+                    </div>
+                  </div>
                 </Card>
               </Reveal>
             );

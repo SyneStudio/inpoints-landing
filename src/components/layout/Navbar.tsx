@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { siteConfig } from "@/lib/site";
 import { useT } from "@/lib/i18n/provider";
 import { cn } from "@/lib/utils";
 
@@ -59,7 +60,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-[var(--color-line)] bg-[var(--color-bg)]"
+          ? "border-b border-[var(--color-line)] bg-[rgba(18,20,24,0.82)] backdrop-blur-xl"
           : "border-b border-transparent",
       )}
     >
@@ -102,10 +103,14 @@ export function Navbar() {
 
           <div className="hidden items-center gap-2 lg:flex">
             <LanguageSwitcher />
-            <Button href="#contact" variant="ghost" size="md">
+            <Button href="#contact" variant="ghost" size="md" className="whitespace-nowrap">
               {t.nav.contact}
             </Button>
-            <Button href="#devis" variant="primary" size="md">
+            {/* Le portail de l'application : pour qui a déjà un compte. */}
+            <Button href={siteConfig.appUrl} variant="secondary" size="md" className="whitespace-nowrap">
+              {t.nav.login}
+            </Button>
+            <Button href="#devis" variant="primary" size="md" className="whitespace-nowrap">
               {t.nav.demo}
             </Button>
           </div>
@@ -149,7 +154,10 @@ export function Navbar() {
               <Button href="#devis" variant="primary" size="lg" onClick={() => setOpen(false)}>
                 {t.nav.demo}
               </Button>
-              <Button href="#contact" variant="secondary" size="lg" onClick={() => setOpen(false)}>
+              <Button href={siteConfig.appUrl} variant="secondary" size="lg" onClick={() => setOpen(false)}>
+                {t.nav.login}
+              </Button>
+              <Button href="#contact" variant="ghost" size="lg" onClick={() => setOpen(false)}>
                 {t.nav.contact}
               </Button>
             </li>

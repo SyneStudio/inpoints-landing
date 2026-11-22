@@ -4,13 +4,16 @@ Site vitrine d'**Inpoints**, le logiciel qui accompagne une compétition de
 sports de combat de l'inscription aux résultats : participants, brackets,
 arbitrage électronique, direct, écran géant et classements.
 
-Né **jumeau** du site d'InSports (`SyneStudio/insport-landing`) — même
-typographie, mêmes primitives, un sol bleu nuit et un accent cyan — il a
-depuis sa propre architecture, en huit temps :
+**Jumeau** du site d'InSports (`SyneStudio/insport-landing`) : même sol
+anthracite, mêmes cartes, mêmes boutons, mêmes effets, même roue des sports.
+Seul l'accent change — rouge chez InSports, bleu roi ici — pour que les deux
+sites se lisent comme un seul écosystème. Le contenu, lui, tient en huit
+temps :
 
-1. **Hero** — le message, et la console du jour entourée de quatre cartes
-   flottantes (tableau, score, inscription, résultats).
-2. **Pour tous les sports de combat** — un arc de cartes ; la discipline
+1. **Hero** — le hero d'InSports : halos, grille, fin de titre en dégradé,
+   et la console du jour qui s'incline en suivant la souris.
+2. **Pour tous les sports de combat** — la roue d'InSports, avec un emoji
+   par discipline ; la discipline
    choisie est au sommet, flèches, clavier, glisser, avance automatique
    jusqu'au premier geste.
 3. **Les outils** — neuf cartes, chacune avec une micro-maquette qui bouge
@@ -37,18 +40,19 @@ depuis sa propre architecture, en huit temps :
 
 | Rôle           | Valeur    |
 | -------------- | --------- |
-| Fond           | `#0a1120` |
-| Bande alternée | `#0c1526` |
-| Carte          | `#111c31` |
-| Bordure        | `#223252` |
-| Texte          | `#eef4fc` |
-| Secondaire     | `#9bacc6` |
+| Fond           | `#14161a` |
+| Bande alternée | `#16191e` |
+| Carte          | `#1c1f25` |
+| Bordure        | `#2c3038` |
+| Texte          | `#f5f4f1` |
+| Secondaire     | `#9aa0aa` |
 | Accent (aplat) | `#3461a8` |
-| Accent (texte) | `#8eabdc` |
+| Accent (texte) | `#7fa6e6` |
 | Logo           | `#3461a8` · `#6e8db5` |
 
-La page est en aplats : ni halo, ni grain, ni dégradé, ni ombre portée. La
-profondeur vient des surfaces et d'un filet d'un pixel.
+Fonds, filets et texte sont ceux d'InSports, à la valeur près ; les effets
+aussi (`.brand-glow`, `.bg-grid`, `.text-gradient`, `.shadow-card`,
+`.edge-light`, `.grain`). Quand InSports change l'un d'eux, le reporter ici.
 
 Deux familles ne suivent aucun thème, parce qu'elles viennent du terrain et
 non d'une charte :
@@ -97,7 +101,7 @@ src/
     mockups/      # Console, Participants, Bracket, Planning, Scoring,
                   # Scoreboard, Results, Registration, Live (+ PhoneFrame)
     demo/         # DemoForm
-    ui/           # primitives (Button, Container, Reveal, …)
+    ui/           # primitives (Button, Card, ScaledFrame, Reveal, …)
   data/           # combatSports, tools
   hooks/          # useMediaQuery, usePrefersReducedMotion
   lib/            # fonts, site, utils, validation, supabase, i18n

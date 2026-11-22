@@ -126,7 +126,7 @@ function Kpi({
   tone?: "default" | "accent";
 }) {
   return (
-    <div className="rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] p-2.5">
+    <div className="rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] p-2.5 edge-light">
       <Icon size={13} className="mb-1.5 text-[var(--color-faint)]" />
       <p className="text-[15px] font-extrabold leading-none">{value}</p>
       <p

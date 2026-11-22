@@ -230,7 +230,7 @@ function Stat({
   tone?: "default" | "accent";
 }) {
   return (
-    <div className="rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] p-2.5">
+    <div className="rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] p-2.5 edge-light">
       <div className="mb-1.5 flex items-center justify-between text-[var(--color-faint)]">
         <Icon size={13} />
         <ChevronRight size={11} />

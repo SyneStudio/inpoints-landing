@@ -1,10 +1,9 @@
 /**
- * Les sports de combat montrés sur l'arc de la section « Pour tous les sports
- * de combat ». `key` est l'identifiant stable ; le nom affiché vient du
- * dictionnaire (t.sports.names[key]). `code` est le monogramme de la carte —
- * deux lettres, parce qu'un pictogramme prétendrait connaître la discipline
- * mieux qu'on ne la connaît, et qu'un emoji ne tient pas la promesse
- * « premium ». `hue` teinte légèrement la carte, sans quitter la charte.
+ * Les sports de combat montrés sur la roue de la section « Pour tous les
+ * sports de combat ». `key` est l'identifiant stable ; le nom affiché vient
+ * du dictionnaire (t.sports.names[key]). `glyph` est l'emoji de la carte,
+ * comme sur la roue des sports d'InSports : les deux sites partagent la même
+ * carte, et plusieurs disciplines voisines partagent le même emoji.
  */
 export type CombatSportKey =
   | "wushu"
@@ -18,17 +17,17 @@ export type CombatSportKey =
   | "jiujitsu"
   | "sanda";
 
-export type CombatSport = { key: CombatSportKey; code: string; hue: number };
+export type CombatSport = { key: CombatSportKey; glyph: string };
 
 export const combatSports: CombatSport[] = [
-  { key: "wushu", code: "WU", hue: 196 },
-  { key: "kungfu", code: "KF", hue: 206 },
-  { key: "karate", code: "KA", hue: 186 },
-  { key: "taekwondo", code: "TK", hue: 214 },
-  { key: "judo", code: "JU", hue: 200 },
-  { key: "boxing", code: "BX", hue: 222 },
-  { key: "kickboxing", code: "KB", hue: 192 },
-  { key: "mma", code: "MM", hue: 210 },
-  { key: "jiujitsu", code: "JJ", hue: 182 },
-  { key: "sanda", code: "SA", hue: 204 },
+  { key: "wushu", glyph: "⚔️" },
+  { key: "kungfu", glyph: "🐉" },
+  { key: "karate", glyph: "🥋" },
+  { key: "taekwondo", glyph: "🦵" },
+  { key: "judo", glyph: "🥋" },
+  { key: "boxing", glyph: "🥊" },
+  { key: "kickboxing", glyph: "🦶" },
+  { key: "mma", glyph: "🤼" },
+  { key: "jiujitsu", glyph: "🥋" },
+  { key: "sanda", glyph: "🥊" },
 ];

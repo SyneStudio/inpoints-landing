@@ -9,10 +9,12 @@ export const de: Dict = {
     application: "Anwendung",
     quote: "Angebot",
     contact: "Kontakt",
+    login: "Anmelden",
     demo: "Angebot anfragen",
   },
   hero: {
-    title: "Organisieren Sie Ihre Wettkämpfe von Anfang bis Ende",
+    titleA: "Organisieren Sie Ihre Wettkämpfe ",
+    titleHl: "von Anfang bis Ende.",
     lead: "Anmeldungen, Tableaus, Kampfrichterwertung, Live und Ergebnisse: Inpoints bündelt den ganzen Wettkampftag auf einer einzigen Plattform.",
     ctaPrimary: "Angebot anfragen",
     ctaSecondary: "Software entdecken",

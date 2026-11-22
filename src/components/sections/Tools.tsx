@@ -41,12 +41,15 @@ export function Tools() {
                 <Tag
                   href={anchor}
                   className={cn(
-                    "group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-line)] bg-[var(--color-surface)] transition-all duration-300 hover:border-[var(--color-line-strong)]",
+                    "group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-line)] bg-[var(--color-surface)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:shadow-[0_24px_60px_-28px_rgba(0,0,0,0.8)]",
                     anchor && "cursor-pointer",
                   )}
                 >
+                  <div className="brand-glow pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
                   {/* La micro-maquette */}
                   <div className="relative h-36 overflow-hidden border-b border-[var(--color-line)] bg-[var(--color-bg)] px-5 pt-5">
+                    <div className="bg-grid pointer-events-none absolute inset-0 opacity-60 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
                     <ToolGlyph id={id} />
                   </div>
 
@@ -126,7 +129,7 @@ function ToolGlyph({ id }: { id: ToolId }) {
               →
             </div>
           </div>
-          <div className={cn(box, tr, "grid h-14 w-14 place-items-center text-[var(--color-primary-soft)] opacity-40 group-hover:opacity-100")}>
+          <div className={cn(box, tr, "grid h-14 w-14 place-items-center text-[var(--color-success)] opacity-40 group-hover:scale-110 group-hover:opacity-100")}>
             <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 13l4 4L19 7" />
             </svg>
@@ -148,7 +151,7 @@ function ToolGlyph({ id }: { id: ToolId }) {
               <span className="h-4 w-4 rounded-full bg-[var(--color-surface-2)]" />
               <span className={cn(line, ["w-16", "w-12", "w-20", "w-14"][i], "bg-[var(--color-fg)]/60")} />
               <span className={cn(line, "w-10")} />
-              <span className="ml-auto h-3 w-8 rounded-full bg-[var(--color-primary)]/40" />
+              <span className="ml-auto h-3 w-8 rounded-full bg-[var(--color-success)]/20" />
             </div>
           ))}
         </div>
@@ -216,8 +219,8 @@ function ToolGlyph({ id }: { id: ToolId }) {
         <div className="relative flex h-24 items-end justify-center gap-2">
           {[
             { h: "60%", label: "2", tone: "bg-[var(--color-surface-2)]" },
-            { h: "100%", label: "1", tone: "bg-[var(--color-primary)]" },
-            { h: "42%", label: "3", tone: "bg-[var(--color-surface)]" },
+            { h: "100%", label: "1", tone: "bg-[#b08d2b]/40" },
+            { h: "42%", label: "3", tone: "bg-[#8a5a2b]/40" },
           ].map((p, i) => (
             <div
               key={i}
@@ -272,8 +275,8 @@ function ToolGlyph({ id }: { id: ToolId }) {
                     tr,
                     "grid h-3.5 w-3.5 place-items-center rounded-full border",
                     i < 2
-                      ? "border-[var(--color-primary)] bg-[var(--color-primary)]/40"
-                      : "border-[var(--color-line-strong)] group-hover:border-[var(--color-primary)] group-hover:bg-[var(--color-primary)]/40",
+                      ? "border-[var(--color-success)] bg-[var(--color-success)]/20"
+                      : "border-[var(--color-line-strong)] group-hover:border-[var(--color-success)] group-hover:bg-[var(--color-success)]/20",
                   )}
                   style={{ transitionDelay: "200ms" }}
                 />
@@ -303,7 +306,7 @@ function ScoreTile({ corner, value }: { corner: "red" | "blue"; value: string })
   const ring = corner === "red" ? "border-[var(--color-corner-red)]/40" : "border-[var(--color-corner-blue)]/40";
   return (
     <div className={cn("rounded-md border bg-[var(--color-surface)] px-3 py-2", ring)}>
-      <span className={cn("block font-display text-[28px] font-extrabold leading-none", color)}>
+      <span className={cn("block font-display text-[28px] font-extrabold leading-none", color, tr, "group-hover:scale-110 origin-left")}>
         {value}
       </span>
     </div>

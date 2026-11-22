@@ -7,10 +7,12 @@ export const fr = {
     application: "Application",
     quote: "Devis",
     contact: "Nous contacter",
+    login: "Se connecter",
     demo: "Demander un devis",
   },
   hero: {
-    title: "Organisez vos compétitions de bout en bout",
+    titleA: "Organisez vos compétitions ",
+    titleHl: "de bout en bout.",
     lead: "Inscriptions, tableaux, arbitrage, direct et résultats : Inpoints réunit toute la journée de compétition sur une seule plateforme.",
     ctaPrimary: "Demander un devis",
     ctaSecondary: "Découvrir le logiciel",

@@ -9,10 +9,12 @@ export const nl: Dict = {
     application: "Applicatie",
     quote: "Offerte",
     contact: "Contact",
+    login: "Inloggen",
     demo: "Offerte aanvragen",
   },
   hero: {
-    title: "Organiseer uw wedstrijden van begin tot einde",
+    titleA: "Organiseer uw wedstrijden ",
+    titleHl: "van begin tot einde.",
     lead: "Inschrijvingen, tabellen, jurering, live en resultaten: Inpoints brengt de hele wedstrijddag samen op één platform.",
     ctaPrimary: "Offerte aanvragen",
     ctaSecondary: "Ontdek de software",

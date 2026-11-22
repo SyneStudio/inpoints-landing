@@ -58,7 +58,7 @@ export function DeepDives() {
 
           <Block id="arbitrage" index="03" copy={d.scoring} side="left">
             {/* La console sur tablette : un cadre plus épais, et rien d'autre. */}
-            <Frame aspect="aspect-[4/3]" className="rounded-[26px] border-[6px] border-[#06090f] p-0">
+            <Frame aspect="aspect-[4/3]" className="rounded-[26px] border-[6px] border-[#06090f] p-0 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.9)]">
               <ScoringMockup className="h-full rounded-[18px]" />
             </Frame>
           </Block>
@@ -114,6 +114,15 @@ function Block({
         side === "right" && "lg:grid-cols-[1fr_1.25fr]",
       )}
     >
+      {/* Le halo, derrière le visuel */}
+      <div
+        aria-hidden
+        className={cn(
+          "brand-glow pointer-events-none absolute top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full opacity-60",
+          side === "left" ? "left-0 -translate-x-1/4" : "right-0 translate-x-1/4",
+        )}
+      />
+
       <motion.div
         style={{ y }}
         className={cn("relative", side === "right" && "lg:order-2")}
@@ -155,7 +164,7 @@ function Frame({
   return (
     <div
       className={cn(
-        "relative w-full overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-line-strong)]",
+        "shadow-card relative w-full overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-line-strong)] edge-light",
         aspect,
         className,
       )}
