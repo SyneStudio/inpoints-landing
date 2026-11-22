@@ -37,15 +37,12 @@ export const en: Dict = {
   sports: {
     kicker: "Combat sports",
     title: "One software for every discipline",
-    lead: "Pools, brackets, rounds, scoring scales: you configure your ruleset in Inpoints, with no custom development. The platform adapts to each discipline.",
+    lead: "Pools, brackets, rounds, scoring scales: the platform adapts to each discipline.",
     prev: "Previous discipline",
     next: "Next discipline",
-    selected: "Selected discipline",
-    common: "Registrations, brackets, electronic scoring and live, following your ruleset.",
     footnote: "Your discipline is not on the list? All it takes is configuring its ruleset.",
     names: {
       wushu: "Wushu",
-      kungfu: "Kung Fu",
       karate: "Karate",
       taekwondo: "Taekwondo",
       judo: "Judo",
@@ -61,7 +58,7 @@ export const en: Dict = {
     more: "See in detail",
     titleA: "A tool for ",
     titleHl: "every step",
-    lead: "Every tool shares the same data: what is entered at check-in appears in the bracket, and a point scored on the mat shows on the big screen.",
+    lead: "Every tool shares the same data: what is entered once is never typed again. Less paper, fewer mistakes, and the whole team sees the same thing.",
     items: {
       competitions: {
         title: "Competition management",
@@ -89,7 +86,7 @@ export const en: Dict = {
       },
       results: {
         title: "Results and rankings",
-        description: "Rankings, medals per club and records, computed automatically and ready to export.",
+        description: "Rankings, medals per club and records, computed automatically and published as soon as the category ends.",
       },
       planning: {
         title: "Mats and schedule",
@@ -111,14 +108,13 @@ export const en: Dict = {
       title: "Brackets that are always up to date",
       text: "The draw generates the bracket, the bouts keep it up to date. Scores, winners and mats refresh throughout the day, with nothing to re-enter.",
       points: [
-        "Balanced draw, seeds, pools or single elimination",
         "The winner moves to the next round as soon as the bout ends",
         "Every athlete follows their path and knows their next bout",
       ],
     },
     registration: {
       kicker: "Registrations",
-      title: "From the club's request to the entry list",
+      title: "Registrations made simple",
       text: "Each competition has its own public form, based on your categories. You receive the requests, approve them in one click, and the athlete is added to the bracket.",
       points: [
         "Public form, no account needed for clubs",
@@ -128,8 +124,8 @@ export const en: Dict = {
     },
     scoring: {
       kicker: "Refereeing",
-      title: "A console designed for matside",
-      text: "Two corners, a clock, rounds. Every point a judge enters is recorded in a timestamped log. A mistake is corrected without erasing anything: the history stays complete.",
+      title: "A tool designed for referees",
+      text: "From a tablet or a computer, the referee starts the clock and awards points with a single tap. The score adds up by itself, and a mistake is fixed in an instant.",
       points: [
         "Current bout, athletes and score visible at a glance",
         "Warnings, end of round and decisions in the same place",
@@ -139,9 +135,9 @@ export const en: Dict = {
     live: {
       kicker: "Live",
       title: "The whole hall follows the same live feed",
-      text: "Every point scored on the mat shows at once on the big screen and on the public page. Spectators, organisers and athletes see the same information at the same time.",
+      text: "The score of every bout is broadcast live on a screen: the whole hall follows the match point by point, wherever they sit. Spectators, coaches and athletes see the same score at the same time.",
       points: [
-        "Big screen opened with a simple link, no account or installation",
+        "Easy screen hook-up, through a simple link",
         "Public page for phones: schedule, mats, brackets and results",
         "Times adjust in real time when the day runs late",
       ],
@@ -150,8 +146,8 @@ export const en: Dict = {
   app: {
     kicker: "The application",
     titleA: "One platform, ",
-    titleHl: "all your screens",
-    lead: "Day console, participants, brackets, schedule, refereeing, results: some twenty screens organised by stage of the day, all connected to the same data.",
+    titleHl: "all your tools",
+    lead: "Day console, participants, brackets, schedule, refereeing, results: some twenty tools organised by stage of the day, all connected to the same data.",
     screens: {
       console: "Day console",
       participants: "Participants",
@@ -166,47 +162,6 @@ export const en: Dict = {
       { title: "Complete history", text: "No data is erased. Every correction is tracked and justified." },
       { title: "Offline refereeing", text: "Without network, entered points are kept, then synced on reconnection." },
       { title: "European hosting", text: "Managed infrastructure, regular backups and continuous updates." },
-    ],
-  },
-  timeSaving: {
-    kicker: "Time saved",
-    titleA: "Less paper. ",
-    titleHl: "More sport.",
-    lead: "What Inpoints computes, nobody has to re-enter. Here is what changes, step by step.",
-    beforeLabel: "Without Inpoints",
-    afterLabel: "With Inpoints",
-    rows: [
-      {
-        moment: "Registrations",
-        before: "Emails, spreadsheets sent by clubs, manual re-entry.",
-        after: "A public form: approved requests become the entry list.",
-      },
-      {
-        moment: "Draw and brackets",
-        before: "Brackets drawn the day before, redone in the morning because of no-shows.",
-        after: "Draw rerun in a second, brackets updated automatically.",
-      },
-      {
-        moment: "Check-in and weigh-in",
-        before: "Paper list at the desk, copied into the brackets afterwards.",
-        after: "Attendance and weigh-ins recorded once, at the desk.",
-      },
-      {
-        moment: "Refereeing",
-        before: "Score sheets, mental arithmetic, re-entry in the evening.",
-        after: "Points are entered live and the score sheet fills itself in.",
-      },
-      {
-        moment: "Results",
-        before: "Rankings recomputed in Excel, published the next day.",
-        after: "Rankings computed automatically, published as soon as the category ends.",
-      },
-    ],
-    gains: [
-      { title: "Fewer manual tasks", text: "No re-entry between the desk, the mat and the podium." },
-      { title: "Fewer errors", text: "Rankings are computed, never copied." },
-      { title: "Better coordination", text: "Mats, delays, bouts in progress: the whole team shares the same information." },
-      { title: "Immediate results", text: "Published as soon as the bout ends, not the next day." },
     ],
   },
   quote: {
@@ -252,7 +207,7 @@ export const en: Dict = {
     navTitle: "Navigation",
     legalTitle: "Legal",
     nav: ["Sports", "Tools", "Features", "Application", "Quote"],
-    legal: ["Privacy", "Legal notice", "Terms", "Cookies"],
+    legal: ["Privacy", "Legal notice", "Terms of use", "Terms of sale", "Cookies"],
     rights: "All rights reserved.",
     madeFor: "Built for competition organisers.",
     siblingLabel: "The sister application, for federations:",

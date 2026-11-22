@@ -7,7 +7,7 @@ arbitrage électronique, direct, écran géant et classements.
 **Jumeau** du site d'InSports (`SyneStudio/insport-landing`) : même sol
 anthracite, mêmes cartes, mêmes boutons, mêmes effets, même roue des sports.
 Seul l'accent change — rouge chez InSports, bleu roi ici — pour que les deux
-sites se lisent comme un seul écosystème. Le contenu, lui, tient en huit
+sites se lisent comme un seul écosystème. Le contenu, lui, tient en sept
 temps :
 
 1. **Hero** — le hero d'InSports : halos, grille, fin de titre en dégradé,
@@ -22,11 +22,9 @@ temps :
    direct : quatre grands blocs alternés, avec parallaxe légère.
 5. **L'application** — sept écrans posés en perspective, ailes qui s'ouvrent
    au défilement ; piste horizontale sous 1024 px. Quatre garanties dessous.
-6. **Gain de temps** — un registre « organisation classique → avec Inpoints »,
-   moment par moment, puis quatre effets.
-7. **Devis** — le bloc « sur devis » et le formulaire (table partagée, voir
+6. **Devis** — le bloc « sur devis » et le formulaire (table partagée, voir
    plus bas).
-8. **Pied de page** — contact, navigation, documents juridiques.
+7. **Pied de page** — contact, navigation, documents juridiques.
 
 ## Stack
 
@@ -97,7 +95,7 @@ src/
   components/
     layout/       # Navbar, Footer, LanguageSwitcher
     sections/     # Hero, CombatSports, Tools, DeepDives, AppShowcase,
-                  # TimeSaving, Quote (+ HeroBackground)
+                  # Quote (+ HeroBackground)
     mockups/      # Console, Participants, Bracket, Planning, Scoring,
                   # Scoreboard, Results, Registration, Live (+ PhoneFrame)
     demo/         # DemoForm

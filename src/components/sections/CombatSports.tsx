@@ -188,7 +188,7 @@ export function CombatSports() {
         <div className="mx-auto mt-2 flex max-w-2xl items-center justify-between gap-4">
           <NavButton dir="prev" label={t.sports.prev} onClick={() => go(-1)} />
 
-          <div className="min-h-[92px] flex-1 text-center" aria-live="polite">
+          <div className="flex-1 text-center" aria-live="polite">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selected.key}
@@ -197,8 +197,7 @@ export function CombatSports() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.35, ease: EASE }}
               >
-                <p className="text-kicker">{t.sports.selected}</p>
-                <h3 className="mt-2 text-h3 font-extrabold">{t.sports.names[selected.key]}</h3>
+                <h3 className="text-h3 font-extrabold">{t.sports.names[selected.key]}</h3>
               </motion.div>
             </AnimatePresence>
           </div>

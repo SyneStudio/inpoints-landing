@@ -35,15 +35,12 @@ export const fr = {
   sports: {
     kicker: "Sports de combat",
     title: "Un seul logiciel pour toutes les disciplines",
-    lead: "Poules, tableaux, rounds, barèmes : vous paramétrez votre règlement dans Inpoints, sans développement spécifique. La plateforme s'adapte à chaque discipline.",
+    lead: "Poules, tableaux, rounds, barèmes : la plateforme s'adapte à chaque discipline.",
     prev: "Discipline précédente",
     next: "Discipline suivante",
-    selected: "Discipline sélectionnée",
-    common: "Inscriptions, tableaux, arbitrage électronique et direct, selon votre règlement.",
     footnote: "Votre discipline n'est pas dans la liste ? Il suffit de paramétrer son règlement.",
     names: {
       wushu: "Wushu",
-      kungfu: "Kung-Fu",
       karate: "Karaté",
       taekwondo: "Taekwondo",
       judo: "Judo",
@@ -59,7 +56,7 @@ export const fr = {
     more: "Voir en détail",
     titleA: "Un outil pour ",
     titleHl: "chaque étape",
-    lead: "Tous les outils partagent les mêmes données : une information saisie à l'accueil apparaît dans le tableau, un point marqué sur l'aire s'affiche sur l'écran géant.",
+    lead: "Tous les outils partagent les mêmes données : une information saisie une fois n'est jamais ressaisie. Moins de papier, moins d'erreurs, et toute l'équipe voit la même chose.",
     items: {
       competitions: {
         title: "Gestion des compétitions",
@@ -87,7 +84,7 @@ export const fr = {
       },
       results: {
         title: "Résultats et classements",
-        description: "Classements, médailles par club et palmarès, calculés automatiquement et prêts à exporter.",
+        description: "Classements, médailles par club et palmarès, calculés automatiquement et publiés dès la fin de la catégorie.",
       },
       planning: {
         title: "Aires et planning",
@@ -109,14 +106,13 @@ export const fr = {
       title: "Des tableaux toujours à jour",
       text: "Le tirage génère le tableau, les rencontres le mettent à jour. Scores, vainqueurs et aires s'actualisent tout au long de la journée, sans aucune ressaisie.",
       points: [
-        "Tirage équilibré, têtes de série, poules ou élimination directe",
         "Le vainqueur accède au tour suivant dès la fin du combat",
         "Chaque athlète suit son parcours et connaît sa prochaine rencontre",
       ],
     },
     registration: {
       kicker: "Inscriptions",
-      title: "De la demande du club à la liste des engagés",
+      title: "Des inscriptions simplifiées",
       text: "Chaque compétition a son formulaire public, basé sur vos catégories. Vous recevez les demandes, vous les validez en un clic, et l'athlète est ajouté au tableau.",
       points: [
         "Formulaire public, sans création de compte pour les clubs",
@@ -126,8 +122,8 @@ export const fr = {
     },
     scoring: {
       kicker: "Arbitrage",
-      title: "Une console pensée pour le bord de l'aire",
-      text: "Deux coins, un chrono, des rounds. Chaque point saisi par un juge est enregistré dans un journal horodaté. Une erreur se corrige sans rien effacer : l'historique reste complet.",
+      title: "Un outil pensé pour les arbitres",
+      text: "Depuis une tablette ou un ordinateur, l'arbitre lance le chrono et attribue les points d'un simple clic. Le score se calcule tout seul, et une erreur se corrige en un instant.",
       points: [
         "Combat en cours, athlètes et score visibles d'un coup d'œil",
         "Avertissements, fins de round et décisions au même endroit",
@@ -137,9 +133,9 @@ export const fr = {
     live: {
       kicker: "Direct",
       title: "Toute la salle suit le même direct",
-      text: "Chaque point marqué sur l'aire s'affiche aussitôt sur l'écran géant et sur la page publique. Spectateurs, organisateurs et athlètes voient la même information au même moment.",
+      text: "Le score de chaque match est retransmis en direct sur un écran : toute la salle suit la rencontre point par point, où qu'elle soit assise. Le public, les coachs et les athlètes voient le même score au même moment.",
       points: [
-        "Écran géant accessible par un simple lien, sans compte ni installation",
+        "Connexion à l'écran simplifiée, via un simple lien",
         "Page publique consultable sur téléphone : horaires, aires, tableaux et résultats",
         "Les horaires s'ajustent en temps réel en cas de retard",
       ],
@@ -148,8 +144,8 @@ export const fr = {
   app: {
     kicker: "L'application",
     titleA: "Une seule plateforme, ",
-    titleHl: "tous vos écrans",
-    lead: "Console du jour, participants, tableaux, planning, arbitrage, résultats : une vingtaine d'écrans organisés par étape de la journée, tous reliés aux mêmes données.",
+    titleHl: "tous vos outils",
+    lead: "Console du jour, participants, tableaux, planning, arbitrage, résultats : une vingtaine d'outils organisés par étape de la journée, tous reliés aux mêmes données.",
     screens: {
       console: "Console du jour",
       participants: "Participants",
@@ -164,47 +160,6 @@ export const fr = {
       { title: "Historique complet", text: "Aucune donnée n'est effacée. Chaque correction est tracée et justifiée." },
       { title: "Arbitrage hors ligne", text: "Sans réseau, les points saisis sont conservés puis synchronisés à la reconnexion." },
       { title: "Hébergement européen", text: "Infrastructure gérée, sauvegardes régulières et mises à jour continues." },
-    ],
-  },
-  timeSaving: {
-    kicker: "Gain de temps",
-    titleA: "Moins de papier. ",
-    titleHl: "Plus de sport.",
-    lead: "Ce qu'Inpoints calcule, personne n'a besoin de le ressaisir. Voici ce qui change, étape par étape.",
-    beforeLabel: "Sans Inpoints",
-    afterLabel: "Avec Inpoints",
-    rows: [
-      {
-        moment: "Inscriptions",
-        before: "E-mails, fichiers Excel envoyés par les clubs, ressaisie à la main.",
-        after: "Un formulaire public : les demandes validées deviennent la liste des engagés.",
-      },
-      {
-        moment: "Tirage et tableaux",
-        before: "Tableaux dessinés la veille, refaits le matin à cause des absences.",
-        after: "Tirage relancé en une seconde, tableaux mis à jour automatiquement.",
-      },
-      {
-        moment: "Accueil et pesée",
-        before: "Liste papier à l'accueil, recopiée ensuite dans les tableaux.",
-        after: "Présences et pesées enregistrées une seule fois, à l'accueil.",
-      },
-      {
-        moment: "Arbitrage",
-        before: "Feuilles de score, calculs de tête, ressaisie le soir.",
-        after: "Les points sont saisis en direct et la feuille de score se remplit seule.",
-      },
-      {
-        moment: "Résultats",
-        before: "Classements recalculés sous Excel, publiés le lendemain.",
-        after: "Classements calculés automatiquement, publiés dès la fin de la catégorie.",
-      },
-    ],
-    gains: [
-      { title: "Moins de tâches manuelles", text: "Aucune ressaisie entre l'accueil, l'aire et le podium." },
-      { title: "Moins d'erreurs", text: "Les classements sont calculés, jamais recopiés." },
-      { title: "Une meilleure coordination", text: "Aires, retards, rencontres en cours : toute l'équipe partage la même information." },
-      { title: "Des résultats immédiats", text: "Publiés dès la fin de la rencontre, pas le lendemain." },
     ],
   },
   quote: {
@@ -251,7 +206,7 @@ export const fr = {
     navTitle: "Navigation",
     legalTitle: "Légal",
     nav: ["Sports", "Outils", "Fonctionnalités", "Application", "Devis"],
-    legal: ["Confidentialité", "Mentions légales", "CGU", "Cookies"],
+    legal: ["Confidentialité", "Mentions légales", "CGU", "CGV", "Cookies"],
     rights: "Tous droits réservés.",
     madeFor: "Conçu pour les organisateurs de compétitions.",
     siblingLabel: "L'application sœur, pour les fédérations :",

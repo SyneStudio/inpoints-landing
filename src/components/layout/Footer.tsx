@@ -15,6 +15,7 @@ const legalHrefs = [
   siteConfig.appUrl + "/legal/confidentialite",
   siteConfig.appUrl + "/legal/mentions-legales",
   siteConfig.appUrl + "/legal/cgu",
+  siteConfig.appUrl + "/legal/cgv",
   siteConfig.appUrl + "/legal/cookies",
 ];
 

@@ -37,15 +37,12 @@ export const de: Dict = {
   sports: {
     kicker: "Kampfsportarten",
     title: "Eine Software für alle Disziplinen",
-    lead: "Pools, Tableaus, Runden, Wertungsschemata: Sie richten Ihr Reglement in Inpoints ein, ohne individuelle Entwicklung. Die Plattform passt sich jeder Disziplin an.",
+    lead: "Pools, Tableaus, Runden, Wertungsschemata: Die Plattform passt sich jeder Disziplin an.",
     prev: "Vorherige Disziplin",
     next: "Nächste Disziplin",
-    selected: "Ausgewählte Disziplin",
-    common: "Anmeldungen, Tableaus, elektronische Wertung und Live, nach Ihrem Reglement.",
     footnote: "Ihre Disziplin steht nicht in der Liste? Es genügt, ihr Reglement einzurichten.",
     names: {
       wushu: "Wushu",
-      kungfu: "Kung-Fu",
       karate: "Karate",
       taekwondo: "Taekwondo",
       judo: "Judo",
@@ -61,7 +58,7 @@ export const de: Dict = {
     more: "Im Detail ansehen",
     titleA: "Ein Werkzeug für ",
     titleHl: "jeden Schritt",
-    lead: "Alle Werkzeuge nutzen dieselben Daten: Was am Empfang erfasst wird, erscheint im Tableau, und ein Punkt auf der Fläche erscheint auf der Großleinwand.",
+    lead: "Alle Werkzeuge nutzen dieselben Daten: Was einmal erfasst ist, wird nie erneut eingegeben. Weniger Papier, weniger Fehler, und das ganze Team sieht dasselbe.",
     items: {
       competitions: {
         title: "Wettkampfverwaltung",
@@ -89,7 +86,7 @@ export const de: Dict = {
       },
       results: {
         title: "Ergebnisse und Ranglisten",
-        description: "Ranglisten, Medaillen pro Verein und Erfolgsbilanzen, automatisch berechnet und bereit zum Export.",
+        description: "Ranglisten, Medaillen pro Verein und Erfolgsbilanzen, automatisch berechnet und veröffentlicht, sobald die Kategorie beendet ist.",
       },
       planning: {
         title: "Flächen und Zeitplan",
@@ -111,14 +108,13 @@ export const de: Dict = {
       title: "Tableaus, die immer aktuell sind",
       text: "Die Auslosung erzeugt das Tableau, die Kämpfe halten es aktuell. Wertungen, Sieger und Flächen werden den ganzen Tag über aktualisiert, ohne erneute Eingabe.",
       points: [
-        "Ausgeglichene Auslosung, Setzliste, Pools oder K.-o.-System",
         "Der Sieger rückt in die nächste Runde, sobald der Kampf endet",
         "Jeder Athlet verfolgt seinen Weg und kennt seinen nächsten Kampf",
       ],
     },
     registration: {
       kicker: "Anmeldungen",
-      title: "Von der Vereinsanfrage zur Teilnehmerliste",
+      title: "Anmeldungen leicht gemacht",
       text: "Jeder Wettkampf hat sein eigenes öffentliches Formular, basierend auf Ihren Kategorien. Sie erhalten die Anfragen, bestätigen sie mit einem Klick, und der Athlet wird dem Tableau hinzugefügt.",
       points: [
         "Öffentliches Formular, kein Konto für die Vereine nötig",
@@ -128,8 +124,8 @@ export const de: Dict = {
     },
     scoring: {
       kicker: "Kampfrichter",
-      title: "Eine Konsole für den Rand der Fläche",
-      text: "Zwei Ecken, eine Uhr, Runden. Jeder Punkt, den ein Richter erfasst, wird in einem Protokoll mit Zeitstempel gespeichert. Ein Fehler wird korrigiert, ohne etwas zu löschen: Der Verlauf bleibt vollständig.",
+      title: "Ein Werkzeug für Kampfrichter",
+      text: "Vom Tablet oder Computer aus startet der Kampfrichter die Uhr und vergibt Punkte mit einem Klick. Die Wertung berechnet sich von selbst, und ein Fehler ist im Nu korrigiert.",
       points: [
         "Laufender Kampf, Athleten und Wertung auf einen Blick",
         "Verwarnungen, Rundenende und Entscheidungen an derselben Stelle",
@@ -139,9 +135,9 @@ export const de: Dict = {
     live: {
       kicker: "Live",
       title: "Die ganze Halle verfolgt denselben Live-Stand",
-      text: "Jeder Punkt auf der Fläche erscheint sofort auf der Großleinwand und auf der öffentlichen Seite. Zuschauer, Organisatoren und Athleten sehen dieselbe Information zur selben Zeit.",
+      text: "Der Stand jedes Kampfes wird live auf einem Bildschirm übertragen: Die ganze Halle verfolgt die Begegnung Punkt für Punkt, egal wo man sitzt. Publikum, Trainer und Athleten sehen denselben Stand zur selben Zeit.",
       points: [
-        "Großleinwand über einen einfachen Link, ohne Konto oder Installation",
+        "Einfache Verbindung zum Bildschirm über einen simplen Link",
         "Öffentliche Seite fürs Telefon: Zeitplan, Flächen, Tableaus und Ergebnisse",
         "Die Zeiten passen sich bei Verspätung in Echtzeit an",
       ],
@@ -150,8 +146,8 @@ export const de: Dict = {
   app: {
     kicker: "Die Anwendung",
     titleA: "Eine Plattform, ",
-    titleHl: "alle Ihre Bildschirme",
-    lead: "Tageskonsole, Teilnehmer, Tableaus, Zeitplan, Wertung, Ergebnisse: rund zwanzig Bildschirme, nach Tagesabschnitt geordnet und alle mit denselben Daten verbunden.",
+    titleHl: "alle Ihre Werkzeuge",
+    lead: "Tageskonsole, Teilnehmer, Tableaus, Zeitplan, Wertung, Ergebnisse: rund zwanzig Werkzeuge, nach Tagesabschnitt geordnet und alle mit denselben Daten verbunden.",
     screens: {
       console: "Tageskonsole",
       participants: "Teilnehmer",
@@ -166,47 +162,6 @@ export const de: Dict = {
       { title: "Vollständiger Verlauf", text: "Es werden keine Daten gelöscht. Jede Korrektur wird nachverfolgt und begründet." },
       { title: "Offline-Wertung", text: "Ohne Netz werden erfasste Punkte gespeichert und bei Wiederverbindung synchronisiert." },
       { title: "Europäisches Hosting", text: "Verwaltete Infrastruktur, regelmäßige Backups und laufende Updates." },
-    ],
-  },
-  timeSaving: {
-    kicker: "Zeitersparnis",
-    titleA: "Weniger Papier. ",
-    titleHl: "Mehr Sport.",
-    lead: "Was Inpoints berechnet, muss niemand erneut eingeben. Das ändert sich, Schritt für Schritt.",
-    beforeLabel: "Ohne Inpoints",
-    afterLabel: "Mit Inpoints",
-    rows: [
-      {
-        moment: "Anmeldungen",
-        before: "E-Mails, Excel-Dateien der Vereine, Eingabe von Hand.",
-        after: "Ein öffentliches Formular: Bestätigte Anfragen werden zur Teilnehmerliste.",
-      },
-      {
-        moment: "Auslosung und Tableaus",
-        before: "Tableaus am Vortag gezeichnet, morgens wegen Absagen neu erstellt.",
-        after: "Auslosung in einer Sekunde wiederholt, Tableaus automatisch aktualisiert.",
-      },
-      {
-        moment: "Empfang und Wiegen",
-        before: "Papierliste am Empfang, danach in die Tableaus übertragen.",
-        after: "Anwesenheit und Wiegen einmal erfasst, am Empfang.",
-      },
-      {
-        moment: "Kampfrichterwertung",
-        before: "Wertungsbögen, Kopfrechnen, Neueingabe am Abend.",
-        after: "Die Punkte werden live erfasst und der Wertungsbogen füllt sich von selbst.",
-      },
-      {
-        moment: "Ergebnisse",
-        before: "Ranglisten in Excel neu berechnet, am nächsten Tag veröffentlicht.",
-        after: "Ranglisten automatisch berechnet, veröffentlicht, sobald die Kategorie endet.",
-      },
-    ],
-    gains: [
-      { title: "Weniger Handarbeit", text: "Keine Neueingabe zwischen Empfang, Fläche und Podium." },
-      { title: "Weniger Fehler", text: "Ranglisten werden berechnet, nie abgeschrieben." },
-      { title: "Bessere Koordination", text: "Flächen, Verzögerungen, laufende Kämpfe: Das ganze Team teilt dieselbe Information." },
-      { title: "Sofortige Ergebnisse", text: "Veröffentlicht, sobald der Kampf endet, nicht am nächsten Tag." },
     ],
   },
   quote: {
@@ -252,7 +207,7 @@ export const de: Dict = {
     navTitle: "Navigation",
     legalTitle: "Rechtliches",
     nav: ["Sportarten", "Werkzeuge", "Funktionen", "Anwendung", "Angebot"],
-    legal: ["Datenschutz", "Impressum", "AGB", "Cookies"],
+    legal: ["Datenschutz", "Impressum", "Nutzungsbedingungen", "Verkaufsbedingungen", "Cookies"],
     rights: "Alle Rechte vorbehalten.",
     madeFor: "Entwickelt für Wettkampfveranstalter.",
     siblingLabel: "Die Schwesteranwendung für Verbände:",

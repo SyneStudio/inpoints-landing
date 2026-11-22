@@ -6,7 +6,6 @@ import { CombatSports } from "@/components/sections/CombatSports";
 import { Tools } from "@/components/sections/Tools";
 import { DeepDives } from "@/components/sections/DeepDives";
 import { AppShowcase } from "@/components/sections/AppShowcase";
-import { TimeSaving } from "@/components/sections/TimeSaving";
 import { Quote } from "@/components/sections/Quote";
 
 /**
@@ -25,7 +24,6 @@ export default function Home() {
         <Tools />
         <DeepDives />
         <AppShowcase />
-        <TimeSaving />
         <Quote />
       </main>
       <Footer />

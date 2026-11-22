@@ -37,15 +37,12 @@ export const nl: Dict = {
   sports: {
     kicker: "Vechtsporten",
     title: "Eén software voor alle disciplines",
-    lead: "Poules, tabellen, rondes, puntenschalen: u stelt uw reglement in Inpoints in, zonder maatwerkontwikkeling. Het platform past zich aan elke discipline aan.",
+    lead: "Poules, tabellen, rondes, puntenschalen: het platform past zich aan elke discipline aan.",
     prev: "Vorige discipline",
     next: "Volgende discipline",
-    selected: "Geselecteerde discipline",
-    common: "Inschrijvingen, tabellen, elektronische jurering en live, volgens uw reglement.",
     footnote: "Staat uw discipline niet in de lijst? Het volstaat om het reglement ervan in te stellen.",
     names: {
       wushu: "Wushu",
-      kungfu: "Kungfu",
       karate: "Karate",
       taekwondo: "Taekwondo",
       judo: "Judo",
@@ -61,7 +58,7 @@ export const nl: Dict = {
     more: "In detail bekijken",
     titleA: "Een tool voor ",
     titleHl: "elke stap",
-    lead: "Alle tools delen dezelfde gegevens: wat aan het onthaal wordt ingevoerd, verschijnt in de tabel, en een punt op de mat verschijnt op het grote scherm.",
+    lead: "Alle tools delen dezelfde gegevens: wat één keer is ingevoerd, hoeft nooit opnieuw te worden ingetikt. Minder papier, minder fouten, en het hele team ziet hetzelfde.",
     items: {
       competitions: {
         title: "Wedstrijdbeheer",
@@ -89,7 +86,7 @@ export const nl: Dict = {
       },
       results: {
         title: "Resultaten en klassementen",
-        description: "Klassementen, medailles per club en palmares, automatisch berekend en klaar om te exporteren.",
+        description: "Klassementen, medailles per club en palmares, automatisch berekend en gepubliceerd zodra de categorie is afgelopen.",
       },
       planning: {
         title: "Matten en planning",
@@ -111,14 +108,13 @@ export const nl: Dict = {
       title: "Tabellen die altijd up-to-date zijn",
       text: "De loting maakt de tabel aan, de kampen werken ze bij. Scores, winnaars en matten worden de hele dag door geactualiseerd, zonder iets opnieuw in te voeren.",
       points: [
-        "Evenwichtige loting, reekshoofden, poules of rechtstreekse uitschakeling",
         "De winnaar gaat naar de volgende ronde zodra de kamp eindigt",
         "Elke atleet volgt zijn parcours en kent zijn volgende kamp",
       ],
     },
     registration: {
       kicker: "Inschrijvingen",
-      title: "Van de aanvraag van de club tot de deelnemerslijst",
+      title: "Vereenvoudigde inschrijvingen",
       text: "Elke wedstrijd heeft een eigen openbaar formulier, gebaseerd op uw categorieën. U ontvangt de aanvragen, keurt ze met één klik goed, en de atleet wordt aan de tabel toegevoegd.",
       points: [
         "Openbaar formulier, geen account nodig voor de clubs",
@@ -128,8 +124,8 @@ export const nl: Dict = {
     },
     scoring: {
       kicker: "Jurering",
-      title: "Een console ontworpen voor de rand van de mat",
-      text: "Twee hoeken, een klok, rondes. Elk punt dat een jurylid invoert, komt in een logboek met tijdstempel. Een fout wordt verbeterd zonder iets te wissen: de geschiedenis blijft volledig.",
+      title: "Een tool ontworpen voor scheidsrechters",
+      text: "Vanop een tablet of computer start de scheidsrechter de klok en kent hij punten toe met één klik. De score wordt vanzelf berekend, en een fout is zo verbeterd.",
       points: [
         "Lopende kamp, atleten en score in één oogopslag",
         "Waarschuwingen, einde van de ronde en beslissingen op dezelfde plek",
@@ -139,9 +135,9 @@ export const nl: Dict = {
     live: {
       kicker: "Live",
       title: "De hele zaal volgt dezelfde livestand",
-      text: "Elk punt op de mat verschijnt meteen op het grote scherm en op de openbare pagina. Toeschouwers, organisatoren en atleten zien dezelfde informatie op hetzelfde moment.",
+      text: "De score van elke kamp wordt live op een scherm getoond: de hele zaal volgt de wedstrijd punt per punt, waar men ook zit. Publiek, coaches en atleten zien dezelfde score op hetzelfde moment.",
       points: [
-        "Groot scherm bereikbaar via een eenvoudige link, zonder account of installatie",
+        "Eenvoudige verbinding met het scherm, via een simpele link",
         "Openbare pagina voor de telefoon: uurrooster, matten, tabellen en resultaten",
         "De tijdstippen passen zich in realtime aan bij vertraging",
       ],
@@ -150,8 +146,8 @@ export const nl: Dict = {
   app: {
     kicker: "De applicatie",
     titleA: "Eén platform, ",
-    titleHl: "al uw schermen",
-    lead: "Dagconsole, deelnemers, tabellen, planning, jurering, resultaten: een twintigtal schermen, geordend per stap van de dag en allemaal verbonden met dezelfde gegevens.",
+    titleHl: "al uw tools",
+    lead: "Dagconsole, deelnemers, tabellen, planning, jurering, resultaten: een twintigtal tools, geordend per stap van de dag en allemaal verbonden met dezelfde gegevens.",
     screens: {
       console: "Dagconsole",
       participants: "Deelnemers",
@@ -166,47 +162,6 @@ export const nl: Dict = {
       { title: "Volledige geschiedenis", text: "Er worden geen gegevens gewist. Elke correctie wordt bijgehouden en gemotiveerd." },
       { title: "Offline jurering", text: "Zonder netwerk worden de ingevoerde punten bewaard en bij herverbinding gesynchroniseerd." },
       { title: "Europese hosting", text: "Beheerde infrastructuur, regelmatige back-ups en doorlopende updates." },
-    ],
-  },
-  timeSaving: {
-    kicker: "Tijdwinst",
-    titleA: "Minder papier. ",
-    titleHl: "Meer sport.",
-    lead: "Wat Inpoints berekent, hoeft niemand opnieuw in te voeren. Dit verandert er, stap voor stap.",
-    beforeLabel: "Zonder Inpoints",
-    afterLabel: "Met Inpoints",
-    rows: [
-      {
-        moment: "Inschrijvingen",
-        before: "E-mails, Excel-bestanden van de clubs, alles met de hand overtypen.",
-        after: "Een openbaar formulier: goedgekeurde aanvragen worden de deelnemerslijst.",
-      },
-      {
-        moment: "Loting en tabellen",
-        before: "Tabellen de dag ervoor getekend, 's ochtends opnieuw gemaakt door afwezigheden.",
-        after: "Loting in één seconde opnieuw gedaan, tabellen automatisch bijgewerkt.",
-      },
-      {
-        moment: "Onthaal en weging",
-        before: "Papieren lijst aan het onthaal, daarna overgenomen in de tabellen.",
-        after: "Aanwezigheden en wegingen één keer geregistreerd, aan het onthaal.",
-      },
-      {
-        moment: "Jurering",
-        before: "Scorebladen, hoofdrekenen, 's avonds overtypen.",
-        after: "De punten worden live ingevoerd en het scoreblad vult zichzelf in.",
-      },
-      {
-        moment: "Resultaten",
-        before: "Klassementen herberekend in Excel, de dag erna gepubliceerd.",
-        after: "Klassementen automatisch berekend, gepubliceerd zodra de categorie afgelopen is.",
-      },
-    ],
-    gains: [
-      { title: "Minder handwerk", text: "Geen herinvoer tussen het onthaal, de mat en het podium." },
-      { title: "Minder fouten", text: "De klassementen worden berekend, nooit overgetypt." },
-      { title: "Betere coördinatie", text: "Matten, vertragingen, lopende kampen: het hele team deelt dezelfde informatie." },
-      { title: "Onmiddellijke resultaten", text: "Gepubliceerd zodra de kamp eindigt, niet de dag erna." },
     ],
   },
   quote: {
@@ -252,7 +207,7 @@ export const nl: Dict = {
     navTitle: "Navigatie",
     legalTitle: "Juridisch",
     nav: ["Sporten", "Tools", "Functies", "Applicatie", "Offerte"],
-    legal: ["Privacy", "Juridische vermeldingen", "Gebruiksvoorwaarden", "Cookies"],
+    legal: ["Privacy", "Juridische vermeldingen", "Gebruiksvoorwaarden", "Verkoopsvoorwaarden", "Cookies"],
     rights: "Alle rechten voorbehouden.",
     madeFor: "Gemaakt voor wedstrijdorganisatoren.",
     siblingLabel: "De zusterapplicatie, voor federaties:",

@@ -7,7 +7,6 @@
  */
 export type CombatSportKey =
   | "wushu"
-  | "kungfu"
   | "karate"
   | "taekwondo"
   | "judo"
@@ -21,7 +20,6 @@ export type CombatSport = { key: CombatSportKey; glyph: string };
 
 export const combatSports: CombatSport[] = [
   { key: "wushu", glyph: "⚔️" },
-  { key: "kungfu", glyph: "🐉" },
   { key: "karate", glyph: "🥋" },
   { key: "taekwondo", glyph: "🦵" },
   { key: "judo", glyph: "🥋" },
