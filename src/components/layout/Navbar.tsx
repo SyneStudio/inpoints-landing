@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 const NAV = [
   { key: "sports", href: "#sports" },
   { key: "tools", href: "#outils" },
-  { key: "features", href: "#fonctionnalites" },
+  { key: "features", href: "#avantages" },
   { key: "application", href: "#application" },
   { key: "quote", href: "#devis" },
 ] as const;

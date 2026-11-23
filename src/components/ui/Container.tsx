@@ -13,9 +13,9 @@ export function Container({
   return (
     <div
       className={cn(
-        "mx-auto w-full px-5 sm:px-8",
-        size === "default" && "max-w-6xl",
-        size === "wide" && "max-w-7xl",
+        "mx-auto w-full px-5 sm:px-8 xl:px-12",
+        size === "default" && "max-w-[1360px]",
+        size === "wide" && "max-w-[1680px]",
         size === "narrow" && "max-w-3xl",
         className,
       )}

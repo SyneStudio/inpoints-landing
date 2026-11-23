@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowDownRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -12,9 +11,9 @@ import { useT } from "@/lib/i18n/provider";
 import { cn } from "@/lib/utils";
 
 /**
- * Les outils, en neuf cartes. Chacune porte une micro-maquette — pas une
- * icône de plus, mais un fragment de l'écran réel, réduit à son geste — qui
- * bouge au survol. Les quatre outils approfondis plus bas mènent à leur bloc.
+ * Les outils, en huit cartes sur deux rangées de quatre. Chacune porte une
+ * micro-maquette — un fragment de l'écran réel, réduit à son geste — qui
+ * bouge au survol. Les cartes apparaissent l'une après l'autre.
  */
 export function Tools() {
   const t = useT();
@@ -32,19 +31,14 @@ export function Tools() {
           lead={t.tools.lead}
         />
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {tools.map(({ id, icon, anchor }, i) => {
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
+          {tools.map(({ id, icon }, i) => {
             const item = t.tools.items[id];
-            const Tag = anchor ? "a" : "div";
             return (
-              <Reveal key={id} delay={(i % 3) * 0.06}>
-                <Tag
-                  href={anchor}
-                  className={cn(
-                    "group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-line)] bg-[var(--color-surface)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:shadow-[0_24px_60px_-28px_rgba(0,0,0,0.8)]",
-                    anchor && "cursor-pointer",
-                  )}
-                >
+              // Chaque carte attend la précédente : la rangée se remplit de
+              // gauche à droite, la seconde après la première.
+              <Reveal key={id} delay={(i % 4) * 0.12 + Math.floor(i / 4) * 0.1}>
+                <div className="group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-line)] bg-[var(--color-surface)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:shadow-[0_24px_60px_-28px_rgba(0,0,0,0.8)]">
                   <div className="brand-glow pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                   {/* La micro-maquette */}
@@ -61,14 +55,8 @@ export function Tools() {
                     <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">
                       {item.description}
                     </p>
-                    {anchor && (
-                      <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[var(--color-primary-soft)] opacity-70 transition-opacity group-hover:opacity-100">
-                        {t.tools.more}
-                        <ArrowDownRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
-                      </span>
-                    )}
                   </div>
-                </Tag>
+                </div>
               </Reveal>
             );
           })}
@@ -134,26 +122,6 @@ function ToolGlyph({ id }: { id: ToolId }) {
               <path d="M5 13l4 4L19 7" />
             </svg>
           </div>
-        </div>
-      );
-    case "participants":
-      return (
-        <div className={cn(box, "relative overflow-hidden")}>
-          {[0, 1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className={cn(
-                tr,
-                "flex items-center gap-2 border-b border-[var(--color-line)]/70 px-2.5 py-1.5 last:border-0 group-hover:bg-[var(--color-primary)]/8",
-              )}
-              style={{ transitionDelay: `${i * 80}ms` }}
-            >
-              <span className="h-4 w-4 rounded-full bg-[var(--color-surface-2)]" />
-              <span className={cn(line, ["w-16", "w-12", "w-20", "w-14"][i], "bg-[var(--color-fg)]/60")} />
-              <span className={cn(line, "w-10")} />
-              <span className="ml-auto h-3 w-8 rounded-full bg-[var(--color-success)]/20" />
-            </div>
-          ))}
         </div>
       );
     case "brackets":

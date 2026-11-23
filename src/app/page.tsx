@@ -4,14 +4,14 @@ import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { Hero } from "@/components/sections/Hero";
 import { CombatSports } from "@/components/sections/CombatSports";
 import { Tools } from "@/components/sections/Tools";
-import { DeepDives } from "@/components/sections/DeepDives";
+import { Benefits } from "@/components/sections/Benefits";
 import { AppShowcase } from "@/components/sections/AppShowcase";
 import { Quote } from "@/components/sections/Quote";
 
 /**
  * La page, dans l'ordre où un organisateur la lit : ce qu'est Inpoints, pour
- * quels sports, avec quels outils, les quatre qui comptent, l'application
- * entière, ce qu'on y gagne, et comment demander un devis.
+ * quels sports, avec quels outils, ce qu'on y gagne, l'application entière,
+ * et comment demander un devis.
  */
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
         <Hero />
         <CombatSports />
         <Tools />
-        <DeepDives />
+        <Benefits />
         <AppShowcase />
         <Quote />
       </main>

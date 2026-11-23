@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 import { useT } from "@/lib/i18n/provider";
 
 // Les ancres suivent t.footer.nav, dans le même ordre.
-const navHrefs = ["#sports", "#outils", "#fonctionnalites", "#application", "#devis"];
+const navHrefs = ["#sports", "#outils", "#avantages", "#application", "#devis"];
 
 // Les documents juridiques vivent dans l'application, lisibles sans compte :
 // une seule source, et la vitrine n'en garde pas une copie qui vieillirait.
@@ -102,7 +102,6 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {siteConfig.legalName}. {f.rights}
           </p>
-          <p>{f.madeFor}</p>
         </div>
       </Container>
     </footer>

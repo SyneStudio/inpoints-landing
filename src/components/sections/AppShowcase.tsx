@@ -75,7 +75,7 @@ export function AppShowcase() {
       </Container>
 
       {/* La table, à partir de 1024 px */}
-      <div ref={ref} className="relative mx-auto mt-16 hidden max-w-[1500px] px-8 lg:block">
+      <div ref={ref} className="relative mx-auto mt-16 hidden max-w-[1760px] px-8 lg:block">
         <div className="brand-glow pointer-events-none absolute left-1/2 top-1/2 h-[700px] w-[1100px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70" />
         <div className="relative grid grid-cols-[1.1fr_1.45fr_1.1fr] items-center gap-8 [perspective:2200px]">
           {/* Aile gauche : ce qui prépare la journée */}

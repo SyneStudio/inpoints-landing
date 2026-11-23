@@ -8,9 +8,11 @@ import {
   useTransform,
   type MotionValue,
 } from "framer-motion";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { CalendarCheck, Check, PlayCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Button, ButtonEl } from "@/components/ui/Button";
+import { ButtonEl } from "@/components/ui/Button";
+import { DemoBooking } from "@/components/demo/DemoBooking";
+import { siteConfig } from "@/lib/site";
 import { VideoDialog } from "@/components/ui/VideoDialog";
 import { HeroBackground } from "@/components/sections/HeroBackground";
 import { DashboardShot } from "@/components/mockups/DashboardShot";
@@ -18,16 +20,17 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { useT } from "@/lib/i18n/provider";
 
 /**
- * Le hero — celui d'InSports, à l'identique : halos et grille en fond, un
- * titre dont la fin passe en dégradé, deux boutons, et l'écran du produit qui
- * s'incline en suivant la souris. Ici l'écran est une capture du tableau de
- * bord de l'application, telle quelle.
+ * L'accueil : la phrase de bienvenue, la promesse (moins de paperasse, plus
+ * de sport), ce qui distingue le logiciel, et deux gestes — réserver une
+ * démonstration ou regarder la vidéo. À droite, le tableau de bord de
+ * l'application s'incline en suivant la souris.
  */
 export function Hero() {
   const t = useT();
   const reduced = usePrefersReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const [video, setVideo] = useState(false);
+  const [booking, setBooking] = useState(false);
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -68,27 +71,70 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.05 }}
-              className="text-display"
+              className="text-hero"
             >
               {t.hero.titleA}
               <span className="text-gradient">{t.hero.titleHl}</span>
             </motion.h1>
 
-            <motion.div
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.12 }}
+              className="text-lead mt-6 max-w-xl"
+            >
+              {t.hero.lead}
+            </motion.p>
+
+            <motion.ul
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.18 }}
-              className="mt-8 flex flex-col gap-3 sm:flex-row"
+              className="mt-6 space-y-2.5"
             >
-              <Button href="#devis" variant="primary" size="lg">
+              {t.hero.values.map((v) => (
+                <li key={v} className="flex items-start gap-3 text-[15px] font-medium">
+                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[var(--color-primary)]/15 text-[var(--color-primary-soft)]">
+                    <Check size={12} aria-hidden />
+                  </span>
+                  {v}
+                </li>
+              ))}
+            </motion.ul>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.24 }}
+              className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+            >
+              <ButtonEl type="button" variant="primary" size="lg" className="whitespace-nowrap" onClick={() => setBooking(true)}>
+                <CalendarCheck size={17} aria-hidden />
                 {t.hero.ctaPrimary}
-                <ArrowRight size={17} aria-hidden />
-              </Button>
-              <ButtonEl type="button" variant="secondary" size="lg" onClick={() => setVideo(true)}>
+              </ButtonEl>
+              <ButtonEl type="button" variant="secondary" size="lg" className="whitespace-nowrap" onClick={() => setVideo(true)}>
                 <PlayCircle size={17} aria-hidden />
                 {t.hero.ctaSecondary}
               </ButtonEl>
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="mt-6 text-sm text-[var(--color-faint)]"
+            >
+              {t.hero.siblingA}
+              <a
+                href={siteConfig.siblingUrl}
+                className="font-semibold text-[var(--color-primary-soft)] underline-offset-4 hover:underline"
+              >
+                {siteConfig.siblingName}
+              </a>
+              {t.hero.siblingB}
+            </motion.p>
+
+            <DemoBooking open={booking} onClose={() => setBooking(false)} />
             <VideoDialog
               open={video}
               onClose={() => setVideo(false)}
